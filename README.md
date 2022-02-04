@@ -1,9 +1,9 @@
 # Development 
 
 To run the repo locally, do
+`npm run storybook`
 
 # Production
-`npm run storybook`
 
 To build your package run:
 
