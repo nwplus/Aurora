@@ -9,16 +9,18 @@ const ColorPageContainer = styled.div`
 `;
 
 const ColorContainer = styled.div`
-  height: 30px;
-  border-radius: 3px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
   font: bold;
-  margin: 10px 5px;
-  
+  margin: 20px 7px;
+
 
   ${(p) => p.white && "color: white"}
+  ${(p) => p.empty && "border: 1px dotted grey;"}
 `;
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -38,7 +40,7 @@ colorVisual.splice(-3, 0, 'empty');
 
 const Template = () => <ColorPageContainer>
   {colorVisual.map((colorName) => (colorName === 'empty') 
-  ? <ColorContainer></ColorContainer>
+  ? <ColorContainer empty={true}></ColorContainer>
   : <ColorContainer style={{background: colors[colorName]}} white={Number(colors[colorName][1]) <= 6}>{colorName}</ColorContainer>)}
 </ColorPageContainer>;
 
