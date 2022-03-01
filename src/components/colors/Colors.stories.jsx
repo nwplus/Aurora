@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import ThemeProvider from '../theme';
+
 import { colors } from './Colors';
 
 const ColorPageContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  font: HK Grotesk;
 `;
 
 const ColorContainer = styled.div`
@@ -38,10 +41,12 @@ colorVisual.splice(-3, 0, 'empty');
 colorVisual.splice(-3, 0, 'empty');
 colorVisual.splice(-3, 0, 'empty');
 
-const Template = () => <ColorPageContainer>
-  {colorVisual.map((colorName) => (colorName === 'empty') 
-  ? <ColorContainer empty={true}></ColorContainer>
-  : <ColorContainer style={{background: colors[colorName]}} white={Number(colors[colorName][1]) <= 6}>{colorName}</ColorContainer>)}
-</ColorPageContainer>;
+const Template = () => <ThemeProvider>
+    <ColorPageContainer>
+      {colorVisual.map((colorName) => (colorName === 'empty') 
+      ? <ColorContainer empty={true}></ColorContainer>
+      : <ColorContainer style={{background: colors[colorName]}} white={Number(colors[colorName][1]) <= 6}>{colorName}</ColorContainer>)}
+  </ColorPageContainer>
+</ThemeProvider>;
 
 export const ColorPalette = Template.bind({});
