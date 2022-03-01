@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ThemeProvider from '../theme';
-
 import { colors } from './Colors';
 
 const ColorPageContainer = styled.div`
@@ -41,12 +39,10 @@ colorVisual.splice(-3, 0, 'empty');
 colorVisual.splice(-3, 0, 'empty');
 colorVisual.splice(-3, 0, 'empty');
 
-const Template = () => <ThemeProvider>
-    <ColorPageContainer>
-      {colorVisual.map((colorName) => (colorName === 'empty') 
-      ? <ColorContainer empty={true}></ColorContainer>
-      : <ColorContainer style={{background: colors[colorName]}} white={Number(colors[colorName][1]) <= 6}>{colorName}</ColorContainer>)}
-  </ColorPageContainer>
-</ThemeProvider>;
+const Template = () => <ColorPageContainer>
+  {colorVisual.map((colorName) => (colorName === 'empty') 
+  ? <ColorContainer empty={true}></ColorContainer>
+  : <ColorContainer style={{background: colors[colorName]}} white={Number(colors[colorName][1]) <= 6}>{colorName}</ColorContainer>)}
+</ColorPageContainer>;
 
 export const ColorPalette = Template.bind({});
