@@ -18,7 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",    
+    "build-storybook": "build-storybook -s public",
     "clean": "rimraf dist",
     "compile": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
   },
@@ -63,13 +63,17 @@
     "@storybook/preset-create-react-app": "^4.0.0",
     "@storybook/react": "^6.4.17",
     "cross-env": "^7.0.3",
+    "styled-components": "^5.3.3",
     "webpack": "^5.68.0"
   },
   "main": "dist/index.js",
   "private": false,
-  "files": [ "dist", "README.md" ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "repository": {
-      "type": "git",
-      "url": "https://github.com/nwplus/Aurora"
+    "type": "git",
+    "url": "https://github.com/nwplus/Aurora"
   }
 }
