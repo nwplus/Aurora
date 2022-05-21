@@ -1,3 +1,6 @@
+# Design
+- Link to Figma Design: https://www.figma.com/file/vmZ1jRhhLHZDcY6rcrWYT2/Aurora-Design-System?node-id=332%3A29076
+
 # Development 
 
 To run the repo locally, do
