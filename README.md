@@ -4,6 +4,10 @@
 # Development 
 
 To run the repo locally, do
+`npm install` (first time only)
+
+then 
+
 `npm run storybook`
 
 # Production
