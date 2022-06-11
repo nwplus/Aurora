@@ -8,7 +8,13 @@ export default {
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    active: {
+      description: 'is component active',
+      options: [true, false],
+      control: {
+        type: 'boolean'
+      }
+    }
   },
 };
 
@@ -18,12 +24,15 @@ const Template = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  primary: true,
+  variant: "primary",
+  active: true,
   label: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
+  variant: "secondary",
+  active: true,
   label: 'Button',
 };
 
