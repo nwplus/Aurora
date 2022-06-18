@@ -11,7 +11,6 @@ const Button = (props) => {
 
         let styles = ""
 
-        // Initial states
         switch(p.variant) {
             case "primary":
                 styles += p.active ? `
@@ -34,41 +33,30 @@ const Button = (props) => {
                         opacity: 0;
         
                         background: linear-gradient(to bottom right, #D7FFF0, #7BFFCF);
+                    }
+
+                    &:hover::before {
+                        opacity: 1;
                     }` : inactiveSolid
                 break;
             case "secondary":
-                styles += p.active ? 'background: #FFF;' : inactiveSolid
+                styles += p.active ? `
+                    background: #FFF;
+                    
+                    &:hover {
+                        background: #F0EEF2;
+                    }` : inactiveSolid
                 break;
             default:
                 break;
         }
 
-        // Action states (only when active)
+        // default active state
         if (p.active) {
-
-            // default active state
             styles += `
                 &:active {
                     transform: scale(0.97);
                 }`
-            
-            // hover states
-            switch(p.variant) {
-                case "primary":
-                    styles += `
-                        &:hover::before {
-                            opacity: 1;
-                        }` 
-                    break;
-                case "secondary":
-                    styles += `
-                        &:hover {
-                            background: #F0EEF2;
-                        }`
-                    break;
-                default:
-                    break;
-            }
         }
 
         return styles
