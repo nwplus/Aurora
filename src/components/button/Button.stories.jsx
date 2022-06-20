@@ -38,3 +38,9 @@ Small.args = {
   size: 'small',
   label: 'Button',
 };
+
+export const Outline = Template.bind({});
+Outline.args = {
+  size: 'large',
+  label: 'Button',
+};
