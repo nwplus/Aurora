@@ -37,6 +37,10 @@ const Button = (props) => {
 
                     &:hover::before {
                         opacity: 1;
+                    }
+
+                    &:active {
+                        transform: scale(0.97);
                     }` : inactiveSolid
                 break;
             case "secondary":
@@ -45,20 +49,16 @@ const Button = (props) => {
                     
                     &:hover {
                         background: #F0EEF2;
+                    }
+
+                    &:active {
+                        transform: scale(0.97);
                     }` : inactiveSolid
                 break;
             default:
                 break;
         }
-
-        // default active state
-        if (p.active) {
-            styles += `
-                &:active {
-                    transform: scale(0.97);
-                }`
-        }
-
+        
         return styles
     }
 
@@ -75,8 +75,6 @@ const Button = (props) => {
         position: relative;
         overflow: hidden;
         cursor: pointer;
-        
-        position: relative;
             
         ${p => getVariantStyles(p)}
     `
