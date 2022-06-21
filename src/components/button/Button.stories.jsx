@@ -44,3 +44,9 @@ Outline.args = {
   size: 'large',
   label: 'Button',
 };
+
+export const Destructive = Template.bind({});
+Destructive.args = {
+  size: 'large',
+  label: 'Button'
+};

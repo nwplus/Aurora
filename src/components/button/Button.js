@@ -33,10 +33,48 @@ const Button = (props) => {
         color: #00A399;
         border: none;
     }
+
+    &:disabled {
+        
+    }
     `
 
+    const Destructive = styled.div`
+    font-family: 'HK Grotesk';
+    font-weight: 700;
+    font-size: 24px;
+    background-color: transparent;
+    color: #20FFAF;
+    display: block;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 60px;
+    gap: 8px;
+    width: 100%;
+    height: 60px;
+    left: 0;
+    top: 0;
+ 
+    background: #F65C5C;
+    border-radius: 8px;
+
+    &:hover {
+      
+    }
+
+    &:disabled {
+        
+    }
+    `
     return (
-        <Outline>{props.label}</Outline>
+        <Outline>{props.label}</Outline>,
+        <Destructive>{props.label}</Destructive>
     )
 }
 
