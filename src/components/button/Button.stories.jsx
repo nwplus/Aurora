@@ -20,33 +20,39 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   label: 'Button',
+  name: 'Primary'
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'Button',
+  name: 'Secondary'
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: 'large',
   label: 'Button',
+  name: 'Large'
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: 'small',
   label: 'Button',
+  name: 'Small'
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
   size: 'large',
   label: 'Button',
+  name: 'Outline'
 };
 
 export const Destructive = Template.bind({});
 Destructive.args = {
   size: 'large',
-  label: 'Button'
+  label: 'Button',
+  name: 'Destructive'
 };

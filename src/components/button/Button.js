@@ -1,83 +1,101 @@
 import styled from 'styled-components';
 
 
-// TEST
+// Button
 const Button = (props) => {
 
-    const Outline = styled.div`
-    font-family: 'HK Grotesk';
-    font-weight: 700;
-    font-size: 24px;
-    background-color: transparent;
-    color: #20FFAF;
-    display: block;
-    border-radius: 8px;
-    text-align: center;
-    border: 2px solid;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 60px;
-    gap: 8px;
-    width: 100%;
-    height: 60px;
-    left: 0;
-    top: 0;
-    border-radius: 8px;
-    border: linear-gradient(92.58deg, #0DEFE1 0%, #78FF96 100%);
+        if (props.name === "Outline") {
+            var Button = styled.div`
+                font-family: 'HK Grotesk', sans-serif;
+                font-size: 1em;
+                font-weight: 700;
+                background-color: transparent;
+                color: #20FFAF;
+                display: inline-block;
+                border-radius: 8px;
+                text-align: center;
+                
+                padding: 0.8rem 2.8rem;
+             
+                transition: 0.3s;
+                cursor: pointer;
+                outline: 2px solid;
 
-    &:hover {
-        background: linear-gradient(90deg, #D7FFF0 0%, #A5FFDE 54.61%, #7BFFCF 100%);
-        color: #00A399;
-        border: none;
-    }
+                &:hover {
+                    background: linear-gradient(90deg, #D7FFF0 0%, #A5FFDE 54.61%, #7BFFCF 100%);
+                    color: #00A399;
+                    outline: none;
+                }
+            
+                &:disabled {
+                    color: #8C898F;
+                    outline: 2px solid #8C898F;
+                }`
+        }
+        else if (props.name === "Destructive") {
+            var Button = styled.div`
+                font-family: 'HK Grotesk', sans-serif;
+                font-size: 1em;
+                font-weight: 700;
+                background-color: #F65C5C;
+                color: #FFFFFF;
+                display: inline-block;
+                border-radius: 8px;
+                text-align: center;
+                
+                padding: 0.8rem 2.8rem;
+            
+                transition: 0.3s;
+                cursor: pointer;
+            
+                &:hover {
+                    background-color: #F83D3D;
+                    color: #FFFFFF;
+                }
+            
+                &:disabled {
+                    background: #BDBAC3
+                    color: #8C898F;
+                }`
+        }
 
-    &:disabled {
+        else {
+            // We can remove this else statement once all the buttons are made
+            // The code below is just there to prevent errors from happening if we view a button that hasn't been made yet :)
+            var Button = styled.div`
+                font-family: 'HK Grotesk', sans-serif;
+                font-size: 1em;
+                font-weight: 700;
+                background-color: #3399ff;
+                color: #FFFFFF;
+                display: inline-block;
+                border-radius: 8px;
+                text-align: center;
+                
+                padding: 0.8rem 2.8rem;
+                
+                transition: 0.3s;
+                cursor: pointer;
+                outline: 2px solid;
+
+                &:hover {
+                    background: #0066ff;
+                    color: #FFFFFF;
+                    outline: none;
+                }
+            
+                &:disabled {
+                    color: #8C898F;
+                    border: 2px solid #8C898F;
+                }`
+        }
         
-    }
-    `
-
-    const Destructive = styled.div`
-    font-family: 'HK Grotesk';
-    font-weight: 700;
-    font-size: 24px;
-    background-color: transparent;
-    color: #20FFAF;
-    display: block;
-    border-radius: 8px;
-    text-align: center;
-    border: 2px solid;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 60px;
-    gap: 8px;
-    width: 100%;
-    height: 60px;
-    left: 0;
-    top: 0;
- 
-    background: #F65C5C;
-    border-radius: 8px;
-
-    &:hover {
-      
-    }
-
-    &:disabled {
-        
-    }
-    `
+   
     return (
-        <Outline>{props.label}</Outline>,
-        <Destructive>{props.label}</Destructive>
+        <Button>{props.label}</Button>
     )
 }
 
 export {Button}
 
-// TEST
+// Button
