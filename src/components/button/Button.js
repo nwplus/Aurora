@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Button = (props) => {
+const LargeButton = (props) => {
 
     const getVariantStyles = (p) => {
 
@@ -62,7 +62,7 @@ const Button = (props) => {
         return styles
     }
 
-    const Button = styled.div`
+    const LargeButton = styled.div`
         display: table;
         user-select: none;
         border-radius: 8px;
@@ -80,12 +80,12 @@ const Button = (props) => {
     `
 
     return (
-        <Button 
+        <LargeButton 
           active={props.active} 
           variant={props.variant}>
             {props.label}
-        </Button>
+        </LargeButton>
     )
 }
 
-export { Button }
+export { LargeButton }
