@@ -21,10 +21,10 @@ const ButtonNavigationComponent = styled.button`
 
     /* white */
 
-    color: #FFFFFF;
+    color: ${colors.white};
 
     &:hover {
-        background: linear-gradient(92.58deg, #20FFAF 0%, #78FF96 100%);
+        background: ${colors.gradientMain};
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -33,7 +33,7 @@ const ButtonNavigationComponent = styled.button`
 
     &:disabled {
         pointer-events: none;
-        color: #8C898F;
+        color: ${colors.grey600};
 }`;
 
 const Button = (props) => {
