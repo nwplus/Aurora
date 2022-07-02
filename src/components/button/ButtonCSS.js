@@ -1,4 +1,5 @@
 import styled, { css, withTheme } from 'styled-components';
+import { colors } from "../colors/index";
 
 export const PrimaryCSS = css`
     background: linear-gradient(to bottom right, #0DEFE1, #78FF96); color: #2C2543;
@@ -6,7 +7,7 @@ export const PrimaryCSS = css`
         display:flex;
         align-items:center;
         justify-content:center;
-        color: #00A399;
+        color: ${colors.teal600};
 
         position: absolute;
         top: 0;
@@ -31,10 +32,10 @@ export const PrimaryCSS = css`
 `
 
 export const SecondaryCSS = css`
-    background: #FFF;
+    background: ${colors.white};
                         
     &:hover {
-        background: #F0EEF2;
+        background: ${colors.grey200};
     }
 
     &:active {
@@ -47,7 +48,7 @@ export const OutlineCSS = css`
     font-size: 1em;
     font-weight: 700;
     background-color: transparent;
-    color: #20ffaf;
+    color: ${colors.emerald400};
     display: inline-block;
     border-radius: 8px;
     text-align: center;
@@ -82,7 +83,7 @@ export const OutlineCSS = css`
     #7bffcf 100%
     );
 
-    color: #00a399;
+    color: ${colors.teal600};
     outline: none;
 
     &:before {
@@ -95,8 +96,8 @@ export const DestructiveCSS = css`
     font-family: 'HK Grotesk', sans-serif;
     font-size: 1em;
     font-weight: 700;
-    background-color: #F65C5C;
-    color: #FFFFFF;
+    background-color: ${colors.red500};
+    color: ${colors.white};
     display: inline-block;
     border-radius: 8px;
     text-align: center;
@@ -106,13 +107,13 @@ export const DestructiveCSS = css`
     cursor: pointer;
 
 &:hover {
-    background-color: #F83D3D;
-    color: #FFFFFF;
+    background-color: ${colors.red600};
+    color: ${colors.white};
 }
 
 &:disabled {
-    background: #BDBAC3
-    color: #8C898F;
+    background: ${colors.grey500};
+    color: ${colors.grey600};
 }
 `
 

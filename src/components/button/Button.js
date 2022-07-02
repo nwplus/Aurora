@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { colors } from "../colors/index";
 import { DestructiveCSS, LargeButtonCSS, OutlineCSS, PrimaryCSS, SecondaryCSS } from './ButtonCSS';
 
 // Button
