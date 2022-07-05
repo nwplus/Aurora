@@ -1,7 +1,6 @@
-import styled, { css, withTheme } from 'styled-components';
 import { colors } from "../colors/index";
 
-export const PrimaryCSS = css`
+export const PrimaryCSS = `
     background: linear-gradient(to bottom right, #0DEFE1, #78FF96); color: #2C2543;
     &::before {
         display:flex;
@@ -31,7 +30,7 @@ export const PrimaryCSS = css`
     }
 `
 
-export const SecondaryCSS = css`
+export const SecondaryCSS = `
     background: ${colors.white};
                         
     &:hover {
@@ -43,7 +42,7 @@ export const SecondaryCSS = css`
     }
 `
 
-export const OutlineCSS = css`
+export const OutlineCSS = `
     font-family: "HK Grotesk", sans-serif;
     font-size: 1em;
     font-weight: 700;
@@ -92,7 +91,7 @@ export const OutlineCSS = css`
 }
 `
 
-export const DestructiveCSS = css`
+export const DestructiveCSS = `
     font-family: 'HK Grotesk', sans-serif;
     font-size: 1em;
     font-weight: 700;
@@ -117,7 +116,7 @@ export const DestructiveCSS = css`
 }
 `
 
-export const LargeButtonCSS = css`
+export const LargeButtonCSS = `
     display: table;
     user-select: none;
     border-radius: 8px;

@@ -9,9 +9,10 @@ const LargeButton = (props) => {
     const getVariantStyles = (p) => {
 
         // Inactive button variant background state (primary, secondary, destructive)
-        const inactiveSolid = 'background: #BDBAC3; color: #8C898F; cursor: default;'
+        const inactiveSolid = `background: ${colors.grey500}; color: ${colors.grey600}; cursor: default;`
+        
         // Inactive outlined variant background state
-        const inactiveOutlined = 'background: Transparent; color: #8c898f; outline: 2px solid #8c898f; padding: 0.7rem 1.5rem;'
+        const inactiveOutlined = `background: Transparent; color: ${colors.grey600}; outline: 2px solid ${colors.grey600}; padding: 0.7rem 1.5rem;`
 
         let styles = ""
 
