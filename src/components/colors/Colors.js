@@ -26,4 +26,5 @@ export const colors = {
   gradientMain: "linear-gradient(92.58deg, #0DEFE1 0%, #78FF96 100%)",
   gradientMainDark: "linear-gradient(90deg, #00DBCE 0%, #00D88A 100%)",
   gradientMainLight: "linear-gradient(90deg, #D7FFF0 0%, #7BFFCF 100%)",
+  gradientTransparentMask: "linear-gradient(#fff 0 0)",
 };

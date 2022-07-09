@@ -1,7 +1,8 @@
 import { colors } from "../colors/index";
 
 export const PrimaryCSS = `
-    background: linear-gradient(to bottom right, #0DEFE1, #78FF96); color: #2C2543;
+    background: ${colors.gradientMain}; 
+    color: ${colors.midnight600};
     &::before {
         display:flex;
         align-items:center;
@@ -18,7 +19,7 @@ export const PrimaryCSS = `
         transition: opacity 0.25s ease-in-out;
         opacity: 0;
 
-        background: linear-gradient(to bottom right, #D7FFF0, #7BFFCF);
+        background: ${colors.gradientMainLight}; ;
     }
 
     &:hover::before {
@@ -67,20 +68,17 @@ export const OutlineCSS = `
     padding: 2px;
     border-radius: 8px;
 
-    background: linear-gradient(to bottom right, #0defe1, #78ff96);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    background: ${colors.gradientMain};
+
+    -webkit-mask: ${colors.gradientTransparentMask} content-box,
+        ${colors.gradientTransparentMask};
+    mask: ${colors.gradientTransparentMask} content-box, ${colors.gradientTransparentMask};
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     }
+    
     &:hover {
-    background: linear-gradient(
-    90deg,
-    #d7fff0 0%,
-    #a5ffde 54.61%,
-    #7bffcf 100%
-    );
+    background: ${colors.gradientMainLight};
 
     color: ${colors.teal600};
     outline: none;
