@@ -114,6 +114,62 @@ export const DestructiveCSS = `
 }
 `
 
+export const PrimaryTextCSS = `
+    font-family: 'HK Grotesk', sans-serif;
+    text-align: center;
+    font-size: 1.1250em; 
+    color: ${colors.white};
+
+    &:hover {
+        background: ${colors.gradientMain};
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    &:hover::after {
+        margin-top: -2px;
+        display: block;
+        content: '';
+        width: 100%;
+        bottom: 0; 
+        height: 2px;
+        background-image: ${colors.gradientMain};
+    }
+
+    &::after {
+        margin-top: -4px;
+        display: block;
+        content: '';
+        width: 100%;
+        bottom: 0; 
+        height: 2px;
+        background-color: ${colors.black};
+    }
+`
+
+export const SecondaryTextCSS = `
+    font-family: 'HK Grotesk', sans-serif;
+    text-align: center;
+    font-size: 1.1250em; 
+    color: ${colors.midnight200};
+
+    &:hover {
+        background: ${colors.gradientMain};
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &:hover::after {
+        margin-top: -2px;
+        display: block;
+        content: '';
+        width: 100%;
+        bottom: 0; 
+        height: 2px;
+        background-image: ${colors.gradientMain};
+    }
+`
+
 export const LargeButtonCSS = `
     display: table;
     user-select: none;

@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 import { colors } from "../colors/index";
-import { DestructiveCSS, LargeButtonCSS, OutlineCSS, PrimaryCSS, SecondaryCSS } from './ButtonCSS';
+import { DestructiveCSS, LargeButtonCSS, OutlineCSS, PrimaryCSS, SecondaryCSS, PrimaryTextCSS, SecondaryTextCSS } from './ButtonCSS';
 
 // Button
 const LargeButton = (props) => {
 
     const getVariantStyles = (p) => {
+
+        const inactiveText = `color: ${colors.grey600}`;
 
         // Inactive button variant background state (primary, secondary, destructive)
         const inactiveSolid = `background: ${colors.grey500}; color: ${colors.grey600}; cursor: default;`
@@ -44,6 +46,18 @@ const LargeButton = (props) => {
                     ${DestructiveCSS}
                 ` : inactiveSolid
               break;
+
+            case "primaryText":
+                styles += p.active ? `
+                    ${PrimaryTextCSS}
+                ` : inactiveText
+                break;
+
+            case "secondaryText":
+                styles += p.active ? `
+                    ${SecondaryTextCSS}
+                ` : inactiveText
+                break;
 
             default:
                 break;
