@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PillButton } from './Button';
+import { PillButton } from './PillButton';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
