@@ -1,18 +1,24 @@
 import styled from 'styled-components';
 
 import { colors } from "../colors/index";
-import { DestructiveCSS, LargeButtonCSS, OutlineCSS, PrimaryCSS, SecondaryCSS, PrimaryTextCSS, SecondaryTextCSS } from './ButtonCSS';
+import {
+  DestructiveCSS,
+  ButtonCSS,
+  OutlineCSS,
+  PrimaryCSS,
+  SecondaryCSS,
+  PrimaryTextCSS,
+  SecondaryTextCSS,
+} from "./ButtonCSS";
 
 // Button
-const LargeButton = (props) => {
-
-    const getVariantStyles = (p) => {
-
-        const inactiveText = `color: ${colors.grey600}`;
+const Button = (props) => {
+  const getVariantStyles = (p) => {
+    const inactiveText = `color: ${colors.grey600}`;
 
         // Inactive button variant background state (primary, secondary, destructive)
         const inactiveSolid = `background: ${colors.grey500}; color: ${colors.grey600}; cursor: default;`
-        
+
         // Inactive outlined variant background state
         const inactiveOutlined = `background: Transparent; color: ${colors.grey600}; outline: 2px solid ${colors.grey600}; padding: 0.7rem 1.5rem;`
 
@@ -62,22 +68,20 @@ const LargeButton = (props) => {
             default:
                 break;
         }
-        
+
         return styles
     }
 
-    const LargeButton = styled.div`
-      ${LargeButtonCSS}
-      ${p => getVariantStyles(p)}
-    `
+  const Button = styled.div`
+    ${ButtonCSS}
+    ${(p) => getVariantStyles(p)} // todo: (p) => getSizeStyles(p)
+  `;
 
-    return (
-        <LargeButton 
-          active={props.active} 
-          variant={props.variant}>
-            {props.label}
-        </LargeButton>
-    )
-}
+  return (
+    <Button active={props.active} variant={props.variant}>
+      {props.label}
+    </Button>
+  );
+};
 
-export { LargeButton }
+export { Button };

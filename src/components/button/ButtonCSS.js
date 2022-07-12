@@ -3,6 +3,8 @@ import { colors } from "../colors/index";
 export const PrimaryCSS = `
     background: ${colors.gradientMain}; 
     color: ${colors.midnight600};
+    font-size: 1.5rem;
+
     &::before {
         display:flex;
         align-items:center;
@@ -33,6 +35,7 @@ export const PrimaryCSS = `
 
 export const SecondaryCSS = `
     background: ${colors.white};
+    font-size: 1.5rem;
                         
     &:hover {
         background: ${colors.grey200};
@@ -45,7 +48,7 @@ export const SecondaryCSS = `
 
 export const OutlineCSS = `
     font-family: "HK Grotesk", sans-serif;
-    font-size: 1em;
+    font-size: 1.5rem;
     font-weight: 700;
     background-color: transparent;
     color: ${colors.emerald400};
@@ -91,7 +94,7 @@ export const OutlineCSS = `
 
 export const DestructiveCSS = `
     font-family: 'HK Grotesk', sans-serif;
-    font-size: 1em;
+    font-size: 1.5rem;
     font-weight: 700;
     background-color: ${colors.red500};
     color: ${colors.white};
@@ -117,7 +120,7 @@ export const DestructiveCSS = `
 export const PrimaryTextCSS = `
     font-family: 'HK Grotesk', sans-serif;
     text-align: center;
-    font-size: 1.1250em; 
+    font-size: 1.1250rem;
     color: ${colors.white};
 
     &:hover {
@@ -150,7 +153,7 @@ export const PrimaryTextCSS = `
 export const SecondaryTextCSS = `
     font-family: 'HK Grotesk', sans-serif;
     text-align: center;
-    font-size: 1.1250em; 
+    font-size: 1.125rem;
     color: ${colors.midnight200};
 
     &:hover {
@@ -170,7 +173,7 @@ export const SecondaryTextCSS = `
     }
 `
 
-export const LargeButtonCSS = `
+export const ButtonCSS = `
     display: table;
     user-select: none;
     border-radius: 8px;
