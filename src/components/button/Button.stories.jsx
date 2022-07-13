@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { LargeButton } from './Button';
+import { Button } from "./Button";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
-  component: LargeButton,
+  title: "Example/Button",
+  component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     active: {
@@ -19,23 +19,25 @@ export default {
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <LargeButton {...args} />;
+const Template = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   variant: "primary",
   active: true,
-  label: 'Button',
-  name: 'Primary'
+  label: "Button",
+  name: "Primary",
+  size: "small",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   variant: "secondary",
   active: true,
-  label: 'Button',
-  name: 'Secondary'
+  label: "Button",
+  name: "Secondary",
+  size: "small",
 };
 
 export const Large = Template.bind({});
