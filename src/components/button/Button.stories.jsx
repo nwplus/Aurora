@@ -71,21 +71,3 @@ Destructive.args = {
   label: 'Button',
   name: 'Destructive'
 };
-
-export const PrimaryText = Template.bind({});
-PrimaryText.args = {
-  variant: "primaryText",
-  active: true,
-  size: 'small',
-  label: 'Button',
-  name: 'Primary Text'
-};
-
-export const SecondaryText = Template.bind({});
-SecondaryText.args = {
-  variant: "secondaryText",
-  active: true,
-  size: 'small',
-  label: 'Button',
-  name: 'Secondary Text'
-};

@@ -6,15 +6,12 @@ import {
   ButtonCSS,
   OutlineCSS,
   PrimaryCSS,
-  SecondaryCSS,
-  PrimaryTextCSS,
-  SecondaryTextCSS,
+  SecondaryCSS
 } from "./ButtonCSS";
 
 // Button
 const Button = (props) => {
   const getVariantStyles = (p) => {
-    const inactiveText = `color: ${colors.grey600}`;
 
         // Inactive button variant background state (primary, secondary, destructive)
         const inactiveSolid = `background: ${colors.grey500}; color: ${colors.grey600}; cursor: default;`
@@ -52,18 +49,6 @@ const Button = (props) => {
                     ${DestructiveCSS}
                 ` : inactiveSolid
               break;
-
-            case "primaryText":
-                styles += p.active ? `
-                    ${PrimaryTextCSS}
-                ` : inactiveText
-                break;
-
-            case "secondaryText":
-                styles += p.active ? `
-                    ${SecondaryTextCSS}
-                ` : inactiveText
-                break;
 
             default:
                 break;
