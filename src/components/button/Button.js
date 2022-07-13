@@ -6,7 +6,8 @@ import {
   ButtonCSS,
   OutlineCSS,
   PrimaryCSS,
-  SecondaryCSS
+  SecondaryCSS,
+  ButtonNavigationCSS
 } from "./ButtonCSS";
 
 // Button
@@ -48,6 +49,16 @@ const Button = (props) => {
                 styles += p.active ? `
                     ${DestructiveCSS}
                 ` : inactiveSolid
+              break;
+
+            case "navigation":
+                styles += p.active ? `
+                    ${ButtonNavigationCSS}
+                ` : `
+                pointer-events: none;
+                color: ${colors.grey600};
+                font-size: 24px;
+                `
               break;
 
             default:

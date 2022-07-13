@@ -54,20 +54,10 @@ Small.args = {
   name: 'Small'
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
-  variant: "outline",
+export const ButtonNavigation = Template.bind({});
+ButtonNavigation.args = {
+  variant: 'navigation',
   active: true,
-  size: 'large',
   label: 'Button',
-  name: 'Outline'
-};
-
-export const Destructive = Template.bind({});
-Destructive.args = {
-  variant: "destructive",
-  active: true,
-  size: 'large',
-  label: 'Button',
-  name: 'Destructive'
-};
+  name: 'ButtonNavigation'
+}
