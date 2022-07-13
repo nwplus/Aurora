@@ -57,6 +57,7 @@ Small.args = {
 export const Outline = Template.bind({});
 Outline.args = {
   variant: "outline",
+  active: true,
   size: 'large',
   label: 'Button',
   name: 'Outline'
