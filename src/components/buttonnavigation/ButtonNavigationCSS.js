@@ -13,11 +13,8 @@ export const ButtonNavigationCSS = `
     line-height: 48px;
     /* identical to box height, or 200% */
 
-    display: flex;
+    display: table;
     align-items: center;
-    text-transform: capitalize;
-
-    /* white */
 
     color: ${colors.white};
 
