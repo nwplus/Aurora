@@ -9,7 +9,7 @@ export const ButtonNavigationCSS = `
     font-family: 'HK Grotesk', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 48px;
     /* identical to box height, or 200% */
 
