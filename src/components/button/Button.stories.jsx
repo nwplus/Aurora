@@ -72,10 +72,3 @@ Destructive.args = {
   name: 'Destructive'
 }; 
 
-export const ButtonNavigation = Template.bind({});
-ButtonNavigation.args = {
-  variant: 'navigation',
-  active: true,
-  label: 'Button',
-  name: 'ButtonNavigation'
-}
