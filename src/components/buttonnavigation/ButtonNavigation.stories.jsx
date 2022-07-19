@@ -23,7 +23,7 @@ const Template = (args) => <ButtonNavigation {...args} />;
 
 export const ButtonNav = Template.bind({});
 ButtonNav.args = {
-  variant: 'navigation',
+  //variant: 'navigation',
   active: true,
   label: 'Button',
   name: 'ButtonNavigation'
