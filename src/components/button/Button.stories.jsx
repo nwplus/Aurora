@@ -70,4 +70,4 @@ Destructive.args = {
   size: 'large',
   label: 'Button',
   name: 'Destructive'
-};
+}; 
