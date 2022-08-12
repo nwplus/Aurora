@@ -3,7 +3,7 @@ import { colors } from "../colors/index";
 export const PrimaryCSS = `
     background: ${colors.gradientMain}; 
     color: ${colors.midnight600};
-    font-size: 1.5rem;
+    font-size: 1.125rem;
 
     &::before {
         display:flex;
@@ -35,7 +35,7 @@ export const PrimaryCSS = `
 
 export const SecondaryCSS = `
     background: ${colors.white};
-    font-size: 1.5rem;
+    font-size: 1.125rem;
                         
     &:hover {
         background: ${colors.grey200};
@@ -48,7 +48,7 @@ export const SecondaryCSS = `
 
 export const OutlineCSS = `
     font-family: "HK Grotesk", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     font-weight: 700;
     background-color: transparent;
     color: ${colors.emerald400};
@@ -56,7 +56,7 @@ export const OutlineCSS = `
     border-radius: 8px;
     text-align: center;
 
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.125rem;
 
     transition: 0.3s;
     cursor: pointer;
@@ -94,14 +94,14 @@ export const OutlineCSS = `
 
 export const DestructiveCSS = `
     font-family: 'HK Grotesk', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     font-weight: 700;
     background-color: ${colors.red500};
     color: ${colors.white};
     display: inline-block;
     border-radius: 8px;
     text-align: center;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.125rem;
 
     transition: 0.3s;
     cursor: pointer;
@@ -121,7 +121,7 @@ export const ButtonCSS = `
     display: table;
     user-select: none;
     border-radius: 8px;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.125rem;
 
     font-family: "", sans-serif;
     font-weight: bold;
