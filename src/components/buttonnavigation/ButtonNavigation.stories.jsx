@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { PillButton } from './PillButton';
+import { ButtonNavigation } from './ButtonNavigation';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Example/Button/PillButton",
-  component: PillButton,
+  title: "Example/Button/ButtonNavigation",
+  component: ButtonNavigation,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     active: {
@@ -19,21 +19,12 @@ export default {
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <PillButton {...args} />;
+const Template = (args) => <ButtonNavigation {...args} />;
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  variant: "primary",
+export const ButtonNav = Template.bind({});
+ButtonNav.args = {
+  //variant: 'navigation',
   active: true,
-  label: 'PillButton',
-  name: 'Primary'
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  variant: "secondary",
-  active: true,
-  label: 'PillButton',
-  name: 'Secondary'
-};
+  label: 'Button',
+  name: 'ButtonNavigation'
+}

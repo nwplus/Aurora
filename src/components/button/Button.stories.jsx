@@ -4,7 +4,7 @@ import { Button } from "./Button";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Example/Button",
+  title: "Example/Button/Button",
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -71,11 +71,3 @@ Destructive.args = {
   label: 'Button',
   name: 'Destructive'
 }; 
-
-export const ButtonNavigation = Template.bind({});
-ButtonNavigation.args = {
-  variant: 'navigation',
-  active: true,
-  label: 'Button',
-  name: 'ButtonNavigation'
-}
