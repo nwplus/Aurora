@@ -54,23 +54,23 @@ const Button = (props) => {
                 break;
         }
 
-        return styles
+      return styles;
+  };
+  const getSizeStyles = (p) => {
+    let styles = "";
+    switch (p.size) {
+      case "large":
+        styles += "font-size: 1.5rem; padding: 0.8rem 1.5rem;";
+        break;
+      case "small":
+        styles += "font-size: 1.125rem; padding: 0.8rem 1.125rem;";
+        break;
+      default:
+        styles += "font-size: 1.125rem; padding: 0.8rem 1.125rem;";
+        break;
     }
-    const getSizeStyles = (p) => {
-      let styles = ""
-      switch(p.size) {
-        case "large":
-          styles += "font-size: 1.5rem;"
-          break;
-        case "small":
-          styles += "font-size: 1.125rem;"
-          break;
-        default:
-          styles += "font-size: 1.125rem;"
-          break;
-      }
-      return styles
-    }
+    return styles;
+  };
 
   const Button = styled.div`
     ${ButtonCSS}
@@ -79,7 +79,7 @@ const Button = (props) => {
   `;
 
   return (
-    <Button active={props.active} variant={props.variant}>
+    <Button active={props.active} variant={props.variant} size={props.size}>
       {props.label}
     </Button>
   );
