@@ -3,6 +3,12 @@ import styled from "styled-components";
 import { colors } from "../../colors";
 
 const Toggle = (props) => {
+  const [checked, setChecked] = useState(props.toggleOn);
+
+  const handleChange = () => {
+    setChecked(!checked);
+  };
+
   const Label = styled.label`
     display: flex;
     align-items: center;
@@ -10,16 +16,15 @@ const Toggle = (props) => {
     cursor: pointer;
     color: white;
 
-    background-color: black;
-
     font-family: "HK Grotesk", sans-serif;
     font-style: normal;
     font-weight: 800;
     font-size: 18px;
   `;
+
   const Switch = styled.div`
     position: relative;
-    width: 44px;
+    width: 46px;
     height: 20px;
     background: ${colors.midnight500};
     border-radius: 32px;
@@ -42,13 +47,13 @@ const Toggle = (props) => {
   `;
 
   const ToggleStyles = (p) => {
-    if (p.toggleOn)
+    if (checked)
       return ` + ${Switch} {
-        background: ${colors.gradientMain};
+      background: ${colors.gradientMain};
 
-        &:before {
-          transform: translate(24px, -50%);
-        }`;
+      &:before {
+        transform: translate(26px, -50%);
+      }`;
   };
 
   const Input = styled.input`
@@ -62,8 +67,8 @@ const Toggle = (props) => {
     <Label>
       <Input
         type="checkbox"
-        toggleOn={props.toggleOn}
-        onChange={props.handleChange}
+        checked={checked}
+        onChange={() => handleChange(checked)}
       />
       <Switch />
       <span>Notifications</span>
