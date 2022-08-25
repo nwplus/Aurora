@@ -8,7 +8,7 @@ export default {
   component: Toggle,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    on: {
+    toggleOn: {
       description: "is component on",
       options: [true, false],
       control: {
@@ -24,5 +24,5 @@ const Template = (args) => <Toggle {...args} />;
 export const Notification = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Notification.args = {
-  on: true,
+  toggleOn: false,
 };

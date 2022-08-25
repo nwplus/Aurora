@@ -1,59 +1,62 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import { colors } from "../../colors";
 
 const Toggle = (props) => {
-  const [checked, setChecked] = useState(false);
   const Label = styled.label`
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     cursor: pointer;
+    color: white;
+
+    background-color: black;
+
+    font-family: "HK Grotesk", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
   `;
   const Switch = styled.div`
-    width: 60px;
-    height: 32px;
-    background: #b3b3b3;
-    border-radius: 32px;
-
     position: relative;
-    width: 60px;
-    height: 32px;
-    background: #b3b3b3;
+    width: 44px;
+    height: 20px;
+    background: ${colors.midnight500};
     border-radius: 32px;
     padding: 4px;
     transition: 300ms all;
+    border: 2px white solid;
 
     &:before {
       transition: 300ms all;
       content: "";
       position: absolute;
-      width: 28px;
-      height: 28px;
+      width: 20px;
+      height: 20px;
       border-radius: 35px;
       top: 50%;
       left: 4px;
-      background: white;
+      background: ${colors.midnight600};
       transform: translate(0, -50%);
     }
   `;
+
   const Input = styled.input`
     opacity: 0;
     position: absolute;
-
     display: none;
 
     &:checked + ${Switch} {
-      background: green;
+      background: ${colors.gradientMain};
 
       &:before {
-        transform: translate(32px, -50%);
+        transform: translate(24px, -50%);
       }
-    }
   `;
 
   return (
     <Label>
-      <Input type="checkbox" onChange={props.handleChange} />
+      <Input type="checkbox" toggleOn={props.toggleOn} />
       <Switch />
       <span>Notifications</span>
     </Label>
