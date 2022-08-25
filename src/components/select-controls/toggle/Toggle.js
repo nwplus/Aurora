@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { colors } from "../../colors";
 
@@ -41,22 +41,30 @@ const Toggle = (props) => {
     }
   `;
 
+  const ToggleStyles = (p) => {
+    if (p.toggleOn)
+      return ` + ${Switch} {
+        background: ${colors.gradientMain};
+
+        &:before {
+          transform: translate(24px, -50%);
+        }`;
+  };
+
   const Input = styled.input`
     opacity: 0;
     position: absolute;
     display: none;
-
-    &:checked + ${Switch} {
-      background: ${colors.gradientMain};
-
-      &:before {
-        transform: translate(24px, -50%);
-      }
+    ${(p) => ToggleStyles(p)}
   `;
 
   return (
     <Label>
-      <Input type="checkbox" toggleOn={props.toggleOn} />
+      <Input
+        type="checkbox"
+        toggleOn={props.toggleOn}
+        onChange={props.handleChange}
+      />
       <Switch />
       <span>Notifications</span>
     </Label>
