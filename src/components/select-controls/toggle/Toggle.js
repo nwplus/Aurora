@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { colors } from "../../colors";
 import { InputCSS, LabelCSS, SwitchCSS } from "./ToggleCSS";
 
-const Toggle = (props) => {
-  const [checked, setChecked] = useState(props.toggleOn);
+const Toggle = ({ toggleOn }) => {
+  const [checked, setChecked] = useState(toggleOn);
 
   const handleChange = () => {
     setChecked(!checked);
