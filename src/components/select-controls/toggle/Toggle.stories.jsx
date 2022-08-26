@@ -21,8 +21,8 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <Toggle {...args} />;
 
-export const Notification = Template.bind({});
+export const NotificationToggle = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Notification.args = {
+NotificationToggle.args = {
   toggleOn: false,
 };
