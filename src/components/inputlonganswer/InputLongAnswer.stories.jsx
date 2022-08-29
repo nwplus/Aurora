@@ -8,7 +8,7 @@ export default {
     component: InputLongAnswerComponent,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
-        isFilled: {
+        isEmpty: {
             description: 'is component filled with text',
             options: [true, false],
             control: {
@@ -24,8 +24,6 @@ const Template = (args) => <InputLongAnswerComponent {...args} />;
 export const InputLongAnswer = Template.bind({});
 InputLongAnswer.args = {
     name: 'Input Long Answer',
-    isFilled: false,
-    aboveCharLimit: false,
-    noAnswer: false, 
     label: 'Input Long Answer',
+    isEmpty: true,
 };

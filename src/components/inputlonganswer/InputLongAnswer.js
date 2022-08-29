@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React, { useState, useEffect } from 'react';
 
 import { colors } from "../colors/index";
 import { 
@@ -8,7 +9,27 @@ import {
 } from "./InputLongAnswerCSS";
 
 const InputLongAnswerComponent = (props) => {
-    const getInputVariantStyles = (p) => {
+    const [text, setText] = useState('');
+    const [errorText, setErrorText] = useState('');
+
+    const changeHandler = (e) => {
+        setText(e.target.value); 
+    };
+
+    useEffect(() => {
+        let longAnswerComponent = document.getElementById('input-long-component');
+
+        if (props.isEmpty) {
+            setErrorText("Please enter your answer!");
+        } else if (text.length > 650) {
+            setErrorText("Looks like you're above 650 characters! Try again.");
+            longAnswerComponent.style.borderColor = `${colors.red500}`;
+        } else {
+            setErrorText("");
+        }
+    }, [text, props]);
+
+    const getInputStateStyles = (p) => {
         const isFilledState = `
         color: ${colors.emerald400};  
         &:focus {
@@ -17,19 +38,14 @@ const InputLongAnswerComponent = (props) => {
         `;
         const errorState = `
         border: 0.25rem solid ${colors.red500};
-        &:focus {
-            border: 0.25rem solid ${colors.red500};
-        }
         `;
 
         let styles = "";
 
-        if (p.isFilled) {
+        if (!p.isEmpty) {
             styles += isFilledState;
-        }
-
-        if (p.aboveCharLimit || p.noAnswer) {
-            styles += errorState;
+        } else {
+            styles += errorState; 
         }
 
         return styles;
@@ -41,7 +57,7 @@ const InputLongAnswerComponent = (props) => {
 
     const Input = styled.textarea`
         ${InputCSS}
-        ${(p) => getInputVariantStyles(p)}
+        ${(p) => getInputStateStyles(p)}
     `;
 
     const ErrorMessage = styled.span`
@@ -49,20 +65,12 @@ const InputLongAnswerComponent = (props) => {
     `;
 
     return (
-        <InputLongAnswer isFilled={props.isFilled} aboveCharLimit={props.aboveCharLimit} noAnswer={props.noAnswer}>
-            <Input isFilled={props.isFilled} aboveCharLimit={props.aboveCharLimit} noAnswer={props.noAnswer}>
-                Maximum of 650 characters
+        <InputLongAnswer isEmpty={props.isEmpty}>
+            <Input id='input-long-component' isEmpty={props.isEmpty} placeholder='Maximum of 650 characters' defaultValue={text} onChange={changeHandler}>
             </Input>
-            { props.aboveCharLimit &&  
-                <ErrorMessage>
-                    Looks like you're above 650 characters! Try again. 
-                </ErrorMessage>
-            }
-            { props.noAnswer &&  
-                <ErrorMessage>
-                    Please enter your answer! 
-                </ErrorMessage>
-            }
+            <ErrorMessage isEmpty={props.isEmpty}>
+                {errorText}
+            </ErrorMessage>
         </InputLongAnswer>
     );
 };
