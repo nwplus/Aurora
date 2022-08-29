@@ -1,10 +1,10 @@
-import { colors } from "../colors/index"
+import { colors } from "../colors/index";
 
 export const InputLongAnswerCSS = `
     width: 800px;
     display: flex;
     flex-direction: column;
-`
+`;
 
 export const InputCSS = `
     height: 303px; 
@@ -23,6 +23,7 @@ export const InputCSS = `
     font-weight: 400;
     z-index: 0;
     display: inline-block;
+    transition: 0.4s;
 
     &:focus {
         outline: none;
@@ -45,7 +46,7 @@ export const InputCSS = `
         background: rgba(255, 255, 255, 1);
         border-radius: 100vw;
     }
-`
+`;
 
 export const ErrorMessageCSS = `
     color: ${colors.red500};
@@ -55,4 +56,10 @@ export const ErrorMessageCSS = `
     font-size: 1.1250rem;
     line-height: 1.375rem;
     font-weight: 400;
-`
+`;
+
+export const isFilledStyle = `
+    color: ${colors.emerald400}; 
+    &:hover {border-color: ${colors.emerald400}} 
+    &:focus {border-color:white}
+`;
