@@ -46,4 +46,5 @@ ShortInput.args = {
   disabled: false,
   error: false,
   value: "",
+  errorMessage: "Please enter an [input]",
 };

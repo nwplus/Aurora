@@ -4,12 +4,18 @@ import { colors } from "../../colors";
 
 const getDisabledOrErrorStyles = (p) => {
   if (p.disabled) {
-    return `border-color: ${colors.grey500}; color:${colors.grey500};`;
+    return `border-color: ${colors.grey500}; color:${colors.grey500}; &:hover {
+      border-color: ${colors.grey500};
+    }`;
   }
   if (p.error) {
-    return `border-color: ${colors.red500};  &:focus {
+    return `border-color: ${colors.red500};  &:hover {
+      border-color: ${colors.red500};
+    }
+    &:focus {
       color: white;
-    }`;
+    }
+    `;
   }
 };
 
@@ -43,33 +49,25 @@ const InputShortComponent = styled.input`
   ${(p) => getDisabledOrErrorStyles(p)}
 `;
 
-const Input = styled.input`
-  position: relative;
-  transition: 0.3s;
-  background-color: transparent;
-  color: white;
-  width: 474px;
-  height: 22px;
-
-  border-radius: 8px;
-  padding: 13px;
-  box-sizing: content-box;
-  border-width: 2px;
-  border-style: solid;
-
-  border-image: linear-gradient(to right bottom, #260b3c, #a053df);
-  border-image-slice: 1;
+const ErrorMessage = styled.div`
+  font-size: 18px;
+  color: ${colors.red500};
+  font-family: "HK Grotesk", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  padding: 4px 0;
+  margin-top: 4px;
 `;
 
-const InputShort = ({ disabled, error, value }) => {
+const InputShort = ({ disabled, error, errorMessage }) => {
   return (
-    <div style={{ background: "black" }}>
+    <div>
       <InputShortComponent
         id="input-short-component"
         disabled={disabled}
         error={error}
-        value={value}
       />
+      {error && !disabled && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };
