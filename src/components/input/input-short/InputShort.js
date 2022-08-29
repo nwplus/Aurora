@@ -30,7 +30,7 @@ const ErrorMessage = styled.div`
 
 const InputShort = ({ disabled, error, errorMessage }) => {
   return (
-    <div style={{ background: "black" }}>
+    <div>
       <InputShortComponent
         id="input-short-component"
         disabled={disabled}
