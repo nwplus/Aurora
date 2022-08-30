@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { errorMessageCSS, InputShortComponentCSS } from "./InputShortCSS";
 import { colors } from "../../colors";
@@ -28,16 +28,37 @@ const ErrorMessage = styled.div`
   ${errorMessageCSS};
 `;
 
-const InputShort = ({ disabled, error, errorMessage, placeholder }) => {
+const InputShort = ({ disabled, isEmptyError, placeholder }) => {
+  const [text, setText] = useState("");
+  const [errorText, setErrorText] = useState("");
+  const textOverMaxCharacterLimit = text.length > 50;
+  const showEmptyErrorStyles = isEmptyError && text.length === 0;
+  const showErrorMessage =
+    (showEmptyErrorStyles || textOverMaxCharacterLimit) && !disabled;
+
+  const changeHandler = (e) => {
+    setText(e.target.value);
+  };
+
+  useEffect(() => {
+    if (showEmptyErrorStyles) {
+      setErrorText("Please enter an input");
+    } else if (textOverMaxCharacterLimit) {
+      setErrorText("Looks like you're above 50 characters! Try again.");
+    }
+  }, [text, showEmptyErrorStyles]);
+
   return (
     <div>
       <InputShortComponent
         id="input-short-component"
         disabled={disabled}
-        error={error}
+        error={showEmptyErrorStyles || textOverMaxCharacterLimit}
         placeholder={placeholder}
+        defaultValue={text}
+        onChange={changeHandler}
       />
-      {error && !disabled && <ErrorMessage>{errorMessage}</ErrorMessage>}
+      {showErrorMessage && <ErrorMessage>{errorText}</ErrorMessage>}
     </div>
   );
 };

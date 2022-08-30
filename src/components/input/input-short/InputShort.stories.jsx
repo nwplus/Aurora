@@ -14,8 +14,8 @@ export default {
       control: {
         type: "boolean",
       },
-      error: {
-        description: "is component in error state",
+      isEmptyError: {
+        description: "is component in empty error state",
         options: [true, false],
         control: {
           type: "boolean",
@@ -23,12 +23,6 @@ export default {
       },
       value: {
         description: "component text value",
-        control: {
-          type: "string",
-        },
-      },
-      errorMessage: {
-        description: "component error message",
         control: {
           type: "string",
         },
@@ -50,8 +44,7 @@ export const ShortInput = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ShortInput.args = {
   disabled: false,
-  error: false,
+  isEmptyError: false,
   value: "",
-  errorMessage: "Please enter an [input]",
   placeholder: "Text",
 };
