@@ -28,13 +28,14 @@ const ErrorMessage = styled.div`
   ${errorMessageCSS};
 `;
 
-const InputShort = ({ disabled, error, errorMessage }) => {
+const InputShort = ({ disabled, error, errorMessage, placeholder }) => {
   return (
     <div>
       <InputShortComponent
         id="input-short-component"
         disabled={disabled}
         error={error}
+        placeholder={placeholder}
       />
       {error && !disabled && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>

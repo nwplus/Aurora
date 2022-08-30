@@ -19,6 +19,10 @@ position: relative;
   font-size: 20px;
   transition: 0.4s;
 
+  ::placeholder {
+    color: ${colors.grey500};
+  }
+
   &:hover {
     border-color: ${colors.emerald400};
   }

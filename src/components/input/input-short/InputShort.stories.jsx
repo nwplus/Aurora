@@ -33,6 +33,12 @@ export default {
           type: "string",
         },
       },
+      placeholder: {
+        description: "component placeholder",
+        control: {
+          type: "string",
+        },
+      },
     },
   },
 };
@@ -47,4 +53,5 @@ ShortInput.args = {
   error: false,
   value: "",
   errorMessage: "Please enter an [input]",
+  placeholder: "Text",
 };
