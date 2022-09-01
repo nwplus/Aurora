@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React, { useState, useEffect } from "react";
 
-import { colors } from "../colors/index";
+import { colors } from "../../colors/index";
 import {
   InputLongAnswerCSS,
   InputCSS,

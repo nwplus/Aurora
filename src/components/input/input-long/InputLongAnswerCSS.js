@@ -1,4 +1,4 @@
-import { colors } from "../colors/index";
+import { colors } from "../../colors/index";
 
 export const InputLongAnswerCSS = `
     width: 800px;
