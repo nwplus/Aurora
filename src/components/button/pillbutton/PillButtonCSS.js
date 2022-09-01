@@ -1,15 +1,15 @@
-import { colors } from "../colors/index";
+import { colors } from "../../colors/index";
 import { PrimaryCSS, SecondaryCSS } from "../button/ButtonCSS";
 
 export const PillPrimaryCSS = `
     ${PrimaryCSS}
     border-radius: 100px;
-`
+`;
 
 export const PillSecondaryCSS = `
     ${SecondaryCSS}
     border-radius: 100px;
-`
+`;
 
 export const PillButtonCSS = `
     display: table;
@@ -24,4 +24,4 @@ export const PillButtonCSS = `
     position: relative;
     overflow: hidden;
     cursor: pointer;
-`
+`;
