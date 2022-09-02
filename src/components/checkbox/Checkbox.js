@@ -3,8 +3,11 @@ import styled from 'styled-components';
 // import { colors } from "../colors/index";
 
 import {
-    Control
+    ControlCSS
 } from "./checkboxCSS";
+
+// Checkbox
+const inactiveCheckbox = `background-color: #ccc;`
 
 const Checkbox = (props) => {
     const getVariantStyles = (p) => {
@@ -12,18 +15,23 @@ const Checkbox = (props) => {
 
         switch(p.variant) {
             case "control":
-                alert("test")
+                styles += p.active ? `
+                ${ControlCSS}
+            ` : inactiveCheckbox
+            break;
+            
         }
-
         return styles
     }
 
     const Checkbox = styled.div`
-        ${CheckboxCSS}
+        ${(p) => getVariantStyles(p)}
     `;
 
     return (
-        <Checkbox variant={props.variant}></Checkbox>
+        <Checkbox variant={props.variant}>
+            
+        </Checkbox>
     );
 }
 

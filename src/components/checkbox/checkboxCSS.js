@@ -1,5 +1,5 @@
 import { colors } from "../colors/index"
 
-export const Control = `
-    
+export const ControlCSS = `
+    color: red;
 `
