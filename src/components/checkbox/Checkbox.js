@@ -28,9 +28,12 @@ const Checkbox = (props) => {
         ${(p) => getVariantStyles(p)}
     `;
 
+    const CheckboxCSS = styled.div `
+        ${(p) => getVariantStyles(p)}
+    `
     return (
         <Checkbox variant={props.variant}>
-            
+            <input style={{borderColor: "red"}} type="checkbox"></input>
         </Checkbox>
     );
 }
