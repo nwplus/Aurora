@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TypographyPageContainer = styled.div`
   display: grid;
-  grid-template-columns: 1.8fr 1.1fr 1fr 0.8fr 0.7fr;
+  grid-template-columns: 1.6fr 1.1fr 1fr 0.8fr 0.9fr;
   font-family: "HK Grotesk", sans-serif;
 `;
 
