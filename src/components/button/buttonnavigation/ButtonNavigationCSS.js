@@ -1,4 +1,4 @@
-import { colors } from "../colors/index";
+import { colors } from "../../colors/index";
 
 export const ButtonNavigationCSS = `
     position: absolute;
@@ -25,4 +25,3 @@ export const ButtonNavigationCSS = `
         background-clip: text;
         text-fill-color: transparent;
     }`;
-
