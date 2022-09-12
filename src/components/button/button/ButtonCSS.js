@@ -1,4 +1,4 @@
-import { colors } from "../colors/index";
+import { colors } from "../../colors/index";
 
 export const PrimaryCSS = `
     background: ${colors.gradientMain}; 
@@ -30,7 +30,7 @@ export const PrimaryCSS = `
     &:active {
         transform: scale(0.97);
     }
-`
+`;
 
 export const SecondaryCSS = `
     background: ${colors.white};
@@ -42,7 +42,7 @@ export const SecondaryCSS = `
     &:active {
         transform: scale(0.97);
     }
-`
+`;
 
 export const OutlineCSS = `
     font-family: "HK Grotesk", sans-serif;
@@ -85,7 +85,7 @@ export const OutlineCSS = `
         background: none;
     }
 }
-`
+`;
 
 export const DestructiveCSS = `
     font-family: 'HK Grotesk', sans-serif;
@@ -108,7 +108,7 @@ export const DestructiveCSS = `
     background: ${colors.grey500};
     color: ${colors.grey600};
 }
-`
+`;
 
 export const ButtonCSS = `
     display: table;
@@ -122,4 +122,4 @@ export const ButtonCSS = `
     position: relative;
     overflow: hidden;
     cursor: pointer;
-`
+`;

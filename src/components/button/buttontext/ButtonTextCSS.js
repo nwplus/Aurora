@@ -1,4 +1,4 @@
-import { colors } from "../colors/index";
+import { colors } from "../../colors/index";
 
 export const PrimaryButtonTextCSS = `
     color: ${colors.white};
@@ -28,7 +28,7 @@ export const PrimaryButtonTextCSS = `
         height: 2px;
         background-color: ${colors.white};
     }
-`
+`;
 
 export const SecondaryButtonTextCSS = `
     color: ${colors.midnight200};
@@ -48,7 +48,7 @@ export const SecondaryButtonTextCSS = `
         height: 2px;
         background-image: ${colors.gradientMain};
     }
-`
+`;
 
 export const ButtonTextCSS = `
     display: table;
@@ -63,4 +63,4 @@ export const ButtonTextCSS = `
     position: relative;
     overflow: hidden;
     cursor: pointer;
-`
+`;

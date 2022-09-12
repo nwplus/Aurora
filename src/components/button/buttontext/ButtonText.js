@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { colors } from "../colors/index";
+import { colors } from "../../colors/index";
 import {
   ButtonTextCSS,
   PrimaryButtonTextCSS,
@@ -13,31 +13,35 @@ const ButtonText = (props) => {
     const inactiveText = `color: ${colors.grey600};
                           cursor: default`;
 
-        let styles = ""
+    let styles = "";
 
-        switch(p.variant) {
-            case "primary":
-                styles += p.active ? `
+    switch (p.variant) {
+      case "primary":
+        styles += p.active
+          ? `
                     ${PrimaryButtonTextCSS}
-                ` : inactiveText
-                break;
+                `
+          : inactiveText;
+        break;
 
-            case "secondary":
-                styles += p.active ? `
+      case "secondary":
+        styles += p.active
+          ? `
                     ${SecondaryButtonTextCSS}
-                ` : inactiveText
-                break;
+                `
+          : inactiveText;
+        break;
 
-            default:
-                break;
-        }
-
-        return styles
+      default:
+        break;
     }
+
+    return styles;
+  };
 
   const ButtonText = styled.div`
     ${ButtonTextCSS}
-    ${(p) => getVariantStyles(p)} 
+    ${(p) => getVariantStyles(p)}
   `;
 
   return (
