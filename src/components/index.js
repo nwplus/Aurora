@@ -5,3 +5,5 @@ export * from "./header";
 export * from "./page";
 
 export * from "./select-controls/toggle";
+
+export * from "./select-controls/radial";
