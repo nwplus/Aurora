@@ -22,6 +22,59 @@ import {
   CaretUp,
   CaretLeft,
   CaretRight,
+  Add,
+  Archive,
+  Attachment,
+  Backspace,
+  Ban,
+  Bookmark,
+  Check,
+  Close,
+  CloudDownload,
+  CloudUpload,
+  Copy,
+  DeleteAlt,
+  Delete,
+  Download,
+  EditAlt,
+  Edit,
+  Enter,
+  Expand,
+  Export,
+  ExternalLink,
+  EyeOff,
+  Eye,
+  Favorite,
+  FilterAlt,
+  Filter,
+  Flag,
+  Heart,
+  LinkAlt,
+  Link,
+  Lock,
+  Login,
+  Logout,
+  Menu,
+  Minimize,
+  OptionsHorizontal,
+  OptionsVertical,
+  Percentage,
+  Refresh,
+  Remove,
+  ReorderAlt,
+  Reorder,
+  Save,
+  Search,
+  Select,
+  Send,
+  Settings,
+  Share,
+  Sort,
+  Switch,
+  Undo,
+  Unlock,
+  ZoomIn,
+  ZoomOut,
 } from "../../assets/icons";
 
 export default {
@@ -52,6 +105,62 @@ const Template = () => (
       <img src={CaretUp} alt="Caret up" />
       <img src={CaretLeft} alt="Caret left" />
       <img src={CaretRight} alt="Caret right" />
+    </RowContainer>
+    Functional
+    <RowContainer>
+      <img src={Add} alt="Add" />
+      <img src={Archive} alt="Archive" />
+      <img src={Attachment} alt="Attachment" />
+      <img src={Backspace} alt="Backspace" />
+      <img src={Ban} alt="Ban" />
+      <img src={Bookmark} alt="Bookmark" />
+      <img src={Check} alt="Check" />
+      <img src={Close} alt="Close" />
+      <img src={CloudDownload} alt="Cloud download" />
+      <img src={CloudUpload} alt="Cloud upload" />
+      <img src={Copy} alt="Copy" />
+      <img src={DeleteAlt} alt="Delete alt" />
+      <img src={Delete} alt="Delete" />
+      <img src={Download} alt="Download" />
+      <img src={EditAlt} alt="Edit alt" />
+      <img src={Edit} alt="Edit" />
+      <img src={Enter} alt="Enter" />
+      <img src={Expand} alt="Expand" />
+      <img src={Export} alt="Export" />
+      <img src={ExternalLink} alt="External link" />
+      <img src={EyeOff} alt="Eye off" />
+      <img src={Eye} alt="Eye" />
+      <img src={Favorite} alt="Favorite" />
+      <img src={FilterAlt} alt="Filter alt" />
+      <img src={Filter} alt="Filter" />
+      <img src={Flag} alt="Flag" />
+      <img src={Heart} alt="Heart" />
+      <img src={LinkAlt} alt="Link alt" />
+      <img src={Link} alt="Link" />
+      <img src={Lock} alt="Lock" />
+      <img src={Login} alt="Login" />
+      <img src={Logout} alt="Logout" />
+      <img src={Menu} alt="Menu" />
+      <img src={Minimize} alt="Minimize" />
+      <img src={OptionsHorizontal} alt="Options horizontal" />
+      <img src={OptionsVertical} alt="Options vertical" />
+      <img src={Percentage} alt="Percentage" />
+      <img src={Refresh} alt="Refresh" />
+      <img src={Remove} alt="Remove" />
+      <img src={ReorderAlt} alt="Reorder alt" />
+      <img src={Reorder} alt="Reorder" />
+      <img src={Save} alt="Save" />
+      <img src={Search} alt="Search" />
+      <img src={Select} alt="Select" />
+      <img src={Send} alt="Sen" />
+      <img src={Settings} alt="Settings" />
+      <img src={Share} alt="Share" />
+      <img src={Sort} alt="Sort" />
+      <img src={Switch} alt="Switch" />
+      <img src={Undo} alt="Undo" />
+      <img src={Unlock} alt="Unloc" />
+      <img src={ZoomIn} alt="Zoom in" />
+      <img src={ZoomOut} alt="Zoom out" />
     </RowContainer>
   </IconsContainer>
 );
