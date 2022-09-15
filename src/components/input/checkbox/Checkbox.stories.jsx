@@ -18,3 +18,13 @@ SimpleCheckbox.args = {
     label: '',
     checked: false
 };
+
+export const Control = Template.bind({});
+Control.args = {
+    variant: "control",
+    checked: false,
+    active: [true, false],
+    control: {
+        type: 'boolean'
+    }
+}
