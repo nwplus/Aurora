@@ -1,26 +1,28 @@
 import React from "react";
 import { IconsContainer, RowContainer } from "./Icons";
 
-import ArrowUp from "../../assets/icons/arrows/arrow-up.svg";
-import ArrowDown from "../../assets/icons/arrows/arrow-down.svg";
-import ArrowLeft from "../../assets/icons/arrows/arrow-left.svg";
-import ArrowRight from "../../assets/icons/arrows/arrow-right.svg";
-import ArrowRightUp from "../../assets/icons/arrows/arrow-right-up.svg";
-import ArrowRightDown from "../../assets/icons/arrows/arrow-right-down.svg";
-import ArrowLeftDown from "../../assets/icons/arrows/arrow-left-down.svg";
-import ArrowLeftUp from "../../assets/icons/arrows/arrow-left-up.svg";
-import ChevronUp from "../../assets/icons/arrows/chevron-up.svg";
-import ChevronDown from "../../assets/icons/arrows/chevron-down.svg";
-import ChevronLeft from "../../assets/icons/arrows/chevron-left.svg";
-import ChevronRight from "../../assets/icons/arrows/chevron-right.svg";
-import ChevronDoubleUp from "../../assets/icons/arrows/chevron-double-up.svg";
-import ChevronDoubleDown from "../../assets/icons/arrows/chevron-double-down.svg";
-import ChevronDoubleLeft from "../../assets/icons/arrows/chevron-double-left.svg";
-import ChevronDoubleRight from "../../assets/icons/arrows/chevron-double-right.svg";
-import CaretDown from "../../assets/icons/arrows/caret-down.svg";
-import CaretUp from "../../assets/icons/arrows/caret-up.svg";
-import CaretLeft from "../../assets/icons/arrows/caret-left.svg";
-import CaretRight from "../../assets/icons/arrows/caret-right.svg";
+import {
+  ArrowUp,
+  ArrowDown,
+  ArrowLeft,
+  ArrowRight,
+  ArrowRightUp,
+  ArrowRightDown,
+  ArrowLeftDown,
+  ArrowLeftUp,
+  ChevronUp,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronDoubleUp,
+  ChevronDoubleDown,
+  ChevronDoubleLeft,
+  ChevronDoubleRight,
+  CaretDown,
+  CaretUp,
+  CaretLeft,
+  CaretRight,
+} from "../../assets/icons";
 
 export default {
   title: "Icons",
