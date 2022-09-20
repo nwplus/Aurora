@@ -88,6 +88,16 @@ import {
   CircleWarning,
   Circle,
   Warning,
+  Call,
+  Email,
+  MessageAlt,
+  Message,
+  Camera,
+  Computer,
+  Laptop,
+  Mobile,
+  Speakers,
+  Tablet,
 } from "../../assets/icons";
 
 export default {
@@ -190,6 +200,22 @@ const Template = () => (
       <img src={CircleWarning} alt="CircleWarning" />
       <img src={Circle} alt="Circle" />
       <img src={Warning} alt="Warning" />
+    </RowContainer>
+    Communication
+    <RowContainer>
+      <img src={Call} alt="Call" />
+      <img src={Email} alt="Email" />
+      <img src={MessageAlt} alt="AltMessageAlt" />
+      <img src={Message} alt="Message " />
+    </RowContainer>
+    Devices
+    <RowContainer>
+      <img src={Camera} alt="Camera" />
+      <img src={Computer} alt="Computer" />
+      <img src={Laptop} alt="Laptop" />
+      <img src={Mobile} alt="Mobile" />
+      <img src={Speakers} alt="Speakers" />
+      <img src={Tablet} alt="Tablet" />
     </RowContainer>
   </IconsContainer>
 );

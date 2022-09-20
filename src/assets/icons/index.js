@@ -90,6 +90,19 @@ import CircleWarning from "./informational/circle-warning.svg";
 import Circle from "./informational/circle.svg";
 import Warning from "./informational/warning.svg";
 
+//communication
+import Call from "./communication/call.svg";
+import Email from "./communication/email.svg";
+import MessageAlt from "./communication/message-alt.svg";
+import Message from "./communication/message.svg";
+
+//devices
+import Camera from "./devices/camera.svg";
+import Computer from "./devices/computer.svg";
+import Laptop from "./devices/laptop.svg";
+import Mobile from "./devices/mobile.svg";
+import Speakers from "./devices/speakers.svg";
+import Tablet from "./devices/tablet.svg";
 export {
   ArrowUp,
   ArrowDown,
@@ -177,4 +190,14 @@ export {
   CircleWarning,
   Circle,
   Warning,
+  Call,
+  Email,
+  MessageAlt,
+  Message,
+  Camera,
+  Computer,
+  Laptop,
+  Mobile,
+  Speakers,
+  Tablet,
 };
