@@ -75,6 +75,21 @@ import Unlock from "./functional/unlock.svg";
 import ZoomIn from "./functional/zoom-in.svg";
 import ZoomOut from "./functional/zoom-out.svg";
 
+//informational
+import CircleAdd from "./informational/circle-add.svg";
+import CircleAddDown from "./informational/circle-arrow-down.svg";
+import CircleAddLeft from "./informational/circle-arrow-left.svg";
+import CircleAddRight from "./informational/circle-arrow-right.svg";
+import CircleAddUp from "./informational/circle-arrow-up.svg";
+import CircleCheck from "./informational/circle-check.svg";
+import CircleError from "./informational/circle-error.svg";
+import CircleHelp from "./informational/circle-help.svg";
+import CircleInformation from "./informational/circle-information.svg";
+import CircleRemove from "./informational/circle-remove.svg";
+import CircleWarning from "./informational/circle-warning.svg";
+import Circle from "./informational/circle.svg";
+import Warning from "./informational/warning.svg";
+
 export {
   ArrowUp,
   ArrowDown,
@@ -149,4 +164,17 @@ export {
   Unlock,
   ZoomIn,
   ZoomOut,
+  CircleAdd,
+  CircleAddDown,
+  CircleAddLeft,
+  CircleAddRight,
+  CircleAddUp,
+  CircleCheck,
+  CircleError,
+  CircleHelp,
+  CircleInformation,
+  CircleRemove,
+  CircleWarning,
+  Circle,
+  Warning,
 };

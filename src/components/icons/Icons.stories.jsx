@@ -75,6 +75,19 @@ import {
   Unlock,
   ZoomIn,
   ZoomOut,
+  CircleAdd,
+  CircleAddDown,
+  CircleAddLeft,
+  CircleAddRight,
+  CircleAddUp,
+  CircleCheck,
+  CircleError,
+  CircleHelp,
+  CircleInformation,
+  CircleRemove,
+  CircleWarning,
+  Circle,
+  Warning,
 } from "../../assets/icons";
 
 export default {
@@ -158,9 +171,25 @@ const Template = () => (
       <img src={Sort} alt="Sort" />
       <img src={Switch} alt="Switch" />
       <img src={Undo} alt="Undo" />
-      <img src={Unlock} alt="Unloc" />
+      <img src={Unlock} alt="Unlock" />
       <img src={ZoomIn} alt="Zoom in" />
       <img src={ZoomOut} alt="Zoom out" />
+    </RowContainer>
+    Informational
+    <RowContainer>
+      <img src={CircleAdd} alt="CircleAdd" />
+      <img src={CircleAddDown} alt="CircleAddDown" />
+      <img src={CircleAddLeft} alt="CircleAddLeft" />
+      <img src={CircleAddRight} alt="CircleAddRight" />
+      <img src={CircleAddUp} alt="CircleAddUp" />
+      <img src={CircleCheck} alt="CircleCheck" />
+      <img src={CircleError} alt="CircleError" />
+      <img src={CircleHelp} alt="CircleHelp" />
+      <img src={CircleInformation} alt="CircleInformation" />
+      <img src={CircleRemove} alt="CircleRemove" />
+      <img src={CircleWarning} alt="CircleWarning" />
+      <img src={Circle} alt="Circle" />
+      <img src={Warning} alt="Warning" />
     </RowContainer>
   </IconsContainer>
 );
