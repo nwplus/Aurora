@@ -104,6 +104,17 @@ import Mobile from "./devices/mobile.svg";
 import Speakers from "./devices/speakers.svg";
 import Tablet from "./devices/tablet.svg";
 
+//views
+import Board from "./views/board.svg";
+import Grid from "./views/grid.svg";
+import Layers from "./views/layers.svg";
+import Layout from "./views/layout.svg";
+import Table from "./views/table.svg";
+import ThreeRows from "./views/three-rows.svg";
+import TwoColumns from "./views/two-columns.svg";
+import TwoRows from "./views/two-rows.svg";
+import Window from "./views/window.svg";
+
 //WYSIWYG
 import Bold from "./WYSIWYG/bold.svg";
 import Italic from "./WYSIWYG/italic.svg";
@@ -209,6 +220,15 @@ export {
   Mobile,
   Speakers,
   Tablet,
+  Board,
+  Grid,
+  Layers,
+  Layout,
+  Table,
+  ThreeRows,
+  TwoColumns,
+  TwoRows,
+  Window,
   Bold,
   Italic,
   List,

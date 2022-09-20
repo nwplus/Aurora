@@ -104,6 +104,15 @@ import {
   Strikethrough,
   Text,
   Underline,
+  Board,
+  Grid,
+  Layers,
+  Layout,
+  Table,
+  ThreeRows,
+  TwoColumns,
+  TwoRows,
+  Window,
 } from "../../assets/icons";
 
 export default {
@@ -222,6 +231,18 @@ const Template = () => (
       <img src={Mobile} alt="Mobile" />
       <img src={Speakers} alt="Speakers" />
       <img src={Tablet} alt="Tablet" />
+    </RowContainer>
+    Views
+    <RowContainer>
+      <img src={Board} alt="Board" />
+      <img src={Grid} alt="Grid" />
+      <img src={Layers} alt="Layers" />
+      <img src={Layout} alt="Layout" />
+      <img src={Table} alt="Table" />
+      <img src={ThreeRows} alt="ThreeRows" />
+      <img src={TwoColumns} alt="TwoColumns" />
+      <img src={TwoRows} alt="TwoRows" />
+      <img src={Window} alt="Window" />
     </RowContainer>
     WYSIWYG
     <RowContainer>
