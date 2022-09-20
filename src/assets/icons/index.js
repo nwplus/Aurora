@@ -103,6 +103,15 @@ import Laptop from "./devices/laptop.svg";
 import Mobile from "./devices/mobile.svg";
 import Speakers from "./devices/speakers.svg";
 import Tablet from "./devices/tablet.svg";
+
+//WYSIWYG
+import Bold from "./WYSIWYG/bold.svg";
+import Italic from "./WYSIWYG/italic.svg";
+import List from "./WYSIWYG/list.svg";
+import Strikethrough from "./WYSIWYG/strikethrough.svg";
+import Text from "./WYSIWYG/text.svg";
+import Underline from "./WYSIWYG/underline.svg";
+
 export {
   ArrowUp,
   ArrowDown,
@@ -200,4 +209,10 @@ export {
   Mobile,
   Speakers,
   Tablet,
+  Bold,
+  Italic,
+  List,
+  Strikethrough,
+  Text,
+  Underline,
 };

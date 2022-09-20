@@ -98,6 +98,12 @@ import {
   Mobile,
   Speakers,
   Tablet,
+  Bold,
+  Italic,
+  List,
+  Strikethrough,
+  Text,
+  Underline,
 } from "../../assets/icons";
 
 export default {
@@ -216,6 +222,15 @@ const Template = () => (
       <img src={Mobile} alt="Mobile" />
       <img src={Speakers} alt="Speakers" />
       <img src={Tablet} alt="Tablet" />
+    </RowContainer>
+    WYSIWYG
+    <RowContainer>
+      <img src={Bold} alt="Bold" />
+      <img src={Italic} alt="Italic" />
+      <img src={List} alt="List" />
+      <img src={Strikethrough} alt="Strikethrough" />
+      <img src={Text} alt="Text" />
+      <img src={Underline} alt="Underline" />
     </RowContainer>
   </IconsContainer>
 );
