@@ -1,18 +1,22 @@
-import { colors } from "../colors/index";
+import { colors } from "../../colors/index";
 
 export const ActiveCSS = `
     color: ${colors.white};
     border: 2px solid ${colors.white};
+    background: transparent;
 `
 
 export const HoverCSS = `
     color: ${colors.emerald400};
-    border: 2px solid ${colors.emerald200};
+    border: 2px solid ${colors.emerald400};
+    background: transparent;
 `
 
 export const InactiveCSS = `
+    cursor: default;
     color: ${colors.grey500};
     border: 2px solid ${colors.grey500};
+    background: transparent;
 `
 
 export const FocusCSS = `

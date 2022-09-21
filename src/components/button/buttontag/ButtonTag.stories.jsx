@@ -24,28 +24,6 @@ const Template = (args) => <ButtonTag {...args} />;
 export const Active = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Active.args = {
-  variant: "active",
+  disabled: false,
   label: "Developer",
-  name: "Active"
-};
-
-export const Hover = Template.bind({});
-Hover.args = {
-  variant: "hover",
-  label: "Developer",
-  name: "Hover"
-};
-
-export const Inactive = Template.bind({});
-Inactive.args = {
-  variant: 'inactive',
-  label: 'Developer',
-  name: 'Inactive'
-};
-
-export const Focus = Template.bind({});
-Focus.args = {
-  variant: 'focus',
-  label: 'Developer',
-  name: 'Focus'
 };
