@@ -37,6 +37,7 @@ const ButtonTag = ({label, disabled}) => {
     margin-right: -10px;
     height: 20px;
     width: 20px;
+    border: 2px solid white;
     ${!disabled &&
         `&:hover {
           border: 2px solid ${colors.emerald400};
