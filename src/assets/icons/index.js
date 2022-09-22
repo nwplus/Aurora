@@ -140,6 +140,13 @@ import Strikethrough from './WYSIWYG/strikethrough.svg';
 import Text from './WYSIWYG/text.svg';
 import Underline from './WYSIWYG/underline.svg';
 
+//User
+import User from './user/user.svg';
+import UserAdd from './user/user-add.svg';
+import UserRemove from './user/user-remove.svg';
+import UserCheck from './user/user-check.svg';
+import Users from './user/users.svg';
+
 export {
   ArrowUp,
   ArrowDown,
@@ -267,4 +274,9 @@ export {
   Strikethrough,
   Text,
   Underline,
+  User,
+  UserAdd,
+  UserRemove,
+  UserCheck,
+  Users,
 };

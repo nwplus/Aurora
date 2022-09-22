@@ -128,6 +128,11 @@ import {
   Sunset,
   Temperature,
   Wind,
+  User,
+  UserAdd,
+  UserRemove,
+  UserCheck,
+  Users,
 } from '../../assets/icons';
 
 export default {
@@ -285,6 +290,14 @@ const Template = () => (
       <img src={Strikethrough} alt='Strikethrough' />
       <img src={Text} alt='Text' />
       <img src={Underline} alt='Underline' />
+    </RowContainer>
+    User
+    <RowContainer>
+      <img src={User} alt='User' />
+      <img src={UserAdd} alt='UserAdd' />
+      <img src={UserRemove} alt='UserRemove' />
+      <img src={UserCheck} alt='UserCheck' />
+      <img src={Users} alt='Users' />
     </RowContainer>
   </IconsContainer>
 );
