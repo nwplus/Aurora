@@ -90,6 +90,46 @@ import CircleWarning from './informational/circle-warning.svg';
 import Circle from './informational/circle.svg';
 import Warning from './informational/warning.svg';
 
+//object
+import BarChartAlt from './objects/bar-chart-alt.svg';
+import BarChart from './objects/bar-chart.svg';
+import Book from './objects/book.svg';
+import Calendar from './objects/calendar.svg';
+import ClipboardCheck from './objects/clipboard-check.svg';
+import ClipboardList from './objects/clipboard-list.svg';
+import Clipboard from './objects/clipboard.svg';
+import Clock from './objects/clock.svg';
+import Comment from './objects/comment.svg';
+import Compass from './objects/compass.svg';
+import CreditCard from './objects/credit-card.svg';
+import Database from './objects/database.svg';
+import DocumentAdd from './objects/document-add.svg';
+import DocumentCheck from './objects/document-check.svg';
+import DocumentDownload from './objects/document-download.svg';
+import DocumentEmpty from './objects/document-empty.svg';
+import DocumentRemove from './objects/document-remove.svg';
+import Document from './objects/document.svg';
+import FolderAdd from './objects/folder-add.svg';
+import FolderCheck from './objects/folder-check.svg';
+import FolderDownload from './objects/folder-download.svg';
+import FolderRemove from './objects/folder-remove.svg';
+import Folder from './objects/folder.svg';
+import Home from './objects/home.svg';
+import Image from './objects/image.svg';
+import Inbox from './objects/inbox.svg';
+import Location from './objects/location.svg';
+import Map from './objects/map.svg';
+import Megaphone from './objects/megaphone.svg';
+import NotificationOff from './objects/notification-off.svg';
+import Notification from './objects/notification.svg';
+import Pen from './objects/pen.svg';
+import Pin from './objects/pin.svg';
+import Print from './objects/print.svg';
+import ShoppingCartAlt from './objects/shopping-cart-alt.svg';
+import ShoppingCart from './objects/shopping-cart.svg';
+import Tag from './objects/tag.svg';
+import Webcam from './objects/webcam.svg';
+
 //communication
 import Call from './communication/call.svg';
 import Email from './communication/email.svg';
@@ -299,4 +339,42 @@ export {
   UserRemove,
   UserCheck,
   Users,
+  BarChartAlt,
+  BarChart,
+  Book,
+  Calendar,
+  ClipboardCheck,
+  ClipboardList,
+  Clipboard,
+  Clock,
+  Comment,
+  Compass,
+  CreditCard,
+  Database,
+  DocumentAdd,
+  DocumentCheck,
+  DocumentDownload,
+  DocumentEmpty,
+  DocumentRemove,
+  Document,
+  FolderAdd,
+  FolderCheck,
+  FolderDownload,
+  FolderRemove,
+  Folder,
+  Home,
+  Image,
+  Inbox,
+  Location,
+  Map,
+  Megaphone,
+  NotificationOff,
+  Notification,
+  Pen,
+  Pin,
+  Print,
+  ShoppingCartAlt,
+  ShoppingCart,
+  Tag,
+  Webcam,
 };

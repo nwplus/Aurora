@@ -142,6 +142,44 @@ import {
   Stop,
   VolumeOff,
   VolumeUp,
+  BarChartAlt,
+  BarChart,
+  Book,
+  Calendar,
+  ClipboardCheck,
+  ClipboardList,
+  Clipboard,
+  Clock,
+  Comment,
+  Compass,
+  CreditCard,
+  Database,
+  DocumentAdd,
+  DocumentCheck,
+  DocumentDownload,
+  DocumentEmpty,
+  DocumentRemove,
+  Document,
+  FolderAdd,
+  FolderCheck,
+  FolderDownload,
+  FolderRemove,
+  Folder,
+  Home,
+  Image,
+  Inbox,
+  Location,
+  Map,
+  Megaphone,
+  NotificationOff,
+  Notification,
+  Pen,
+  Pin,
+  Print,
+  ShoppingCartAlt,
+  ShoppingCart,
+  Tag,
+  Webcam,
 } from '../../assets/icons';
 
 export default {
@@ -244,6 +282,47 @@ const Template = () => (
       <img src={CircleWarning} alt='CircleWarning' />
       <img src={Circle} alt='Circle' />
       <img src={Warning} alt='Warning' />
+    </RowContainer>
+    Objects
+    <RowContainer>
+      <img src={BarChartAlt} alt='BarChartAlt' />
+      <img src={BarChart} alt='BarChart' />
+      <img src={Book} alt='Book' />
+      <img src={Calendar} alt='Calendar' />
+      <img src={ClipboardCheck} alt='ClipboardCheck' />
+      <img src={ClipboardList} alt='ClipboardList' />
+      <img src={Clipboard} alt='Clipboard' />
+      <img src={Clock} alt='Clock' />
+      <img src={Comment} alt='Comment' />
+      <img src={Compass} alt='Compass' />
+      <img src={CreditCard} alt='CreditCard' />
+      <img src={Database} alt='Database' />
+      <img src={DocumentAdd} alt='DocumentAdd' />
+      <img src={DocumentCheck} alt='DocumentCheck' />
+      <img src={DocumentDownload} alt='DocumentDownload' />
+      <img src={DocumentEmpty} alt='DocumentEmpty' />
+      <img src={DocumentRemove} alt='DocumentRemove' />
+      <img src={Document} alt='Document' />
+      <img src={FolderAdd} alt='FolderAdd' />
+      <img src={FolderCheck} alt='FolderCheck' />
+      <img src={FolderDownload} alt='FolderDownload' />
+      <img src={FolderRemove} alt='FolderRemove' />
+      <img src={Folder} alt='Folder' />
+      <img src={Home} alt='Home' />
+      <img src={Image} alt='Image' />
+      <img src={Inbox} alt='Inbox' />
+      <img src={Location} alt='Location' />
+      <img src={Map} alt='Map' />
+      <img src={Megaphone} alt='Megaphone' />
+      <img src={NotificationOff} alt='NotificationOff' />
+      <img src={Notification} alt='Notification' />
+      <img src={Pen} alt='Pen' />
+      <img src={Pin} alt='Pin' />
+      <img src={Print} alt='Print' />
+      <img src={ShoppingCartAlt} alt='ShoppingCartAlt' />
+      <img src={ShoppingCart} alt='ShoppingCart' />
+      <img src={Tag} alt='Tag' />
+      <img src={Webcam} alt='Webcam' />
     </RowContainer>
     Communication
     <RowContainer>
