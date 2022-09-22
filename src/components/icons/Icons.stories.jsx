@@ -133,6 +133,15 @@ import {
   UserRemove,
   UserCheck,
   Users,
+  Next,
+  Pause,
+  Play,
+  Previous,
+  Repeat,
+  Shuffle,
+  Stop,
+  VolumeOff,
+  VolumeUp,
 } from '../../assets/icons';
 
 export default {
@@ -242,6 +251,18 @@ const Template = () => (
       <img src={Email} alt='Email' />
       <img src={MessageAlt} alt='MessageAlt' />
       <img src={Message} alt='Message ' />
+    </RowContainer>
+    Media
+    <RowContainer>
+      <img src={Next} alt='Next' />
+      <img src={Pause} alt='Pause' />
+      <img src={Play} alt='Play' />
+      <img src={Previous} alt='Previous' />
+      <img src={Repeat} alt='Repeat' />
+      <img src={Shuffle} alt='Shuffle' />
+      <img src={Stop} alt='Stop' />
+      <img src={VolumeOff} alt='VolumeOff' />
+      <img src={VolumeUp} alt='VolumeUp' />
     </RowContainer>
     Devices
     <RowContainer>

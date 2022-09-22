@@ -96,6 +96,17 @@ import Email from './communication/email.svg';
 import MessageAlt from './communication/message-alt.svg';
 import Message from './communication/message.svg';
 
+//media
+import Next from './media/next.svg';
+import Pause from './media/pause.svg';
+import Play from './media/play.svg';
+import Previous from './media/previous.svg';
+import Repeat from './media/repeat.svg';
+import Shuffle from './media/shuffle.svg';
+import Stop from './media/stop.svg';
+import VolumeOff from './media/volume-off.svg';
+import VolumeUp from './media/volume-up.svg';
+
 //devices
 import Camera from './devices/camera.svg';
 import Computer from './devices/computer.svg';
@@ -238,6 +249,15 @@ export {
   Email,
   MessageAlt,
   Message,
+  Next,
+  Pause,
+  Play,
+  Previous,
+  Repeat,
+  Shuffle,
+  Stop,
+  VolumeOff,
+  VolumeUp,
   Camera,
   Computer,
   Laptop,
