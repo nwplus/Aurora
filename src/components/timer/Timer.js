@@ -3,7 +3,10 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import {
   TimerCSS,
-  TimerContainerCSS
+  TimerContainerCSS,
+  TimerHeadingCSS,
+  TimerNumsCSS,
+  TimerLabelsCSS
 } from "./TimerCSS";
 
 const TimerComponent = styled.div`
@@ -12,6 +15,18 @@ const TimerComponent = styled.div`
 
 const TimerContainer = styled.div`
     ${TimerContainerCSS}
+`;
+
+const TimerHeading = styled.h1`
+    ${TimerHeadingCSS}
+`;
+
+const Timer = styled.span`
+    ${TimerNumsCSS}
+`;
+
+const TimeLabels = styled.div`
+    ${TimerLabelsCSS}
 `;
 
 const TimerComponentContainer = ({isActive, time}) => {
@@ -39,34 +54,47 @@ const TimerComponentContainer = ({isActive, time}) => {
         }
     }, [getTime, seconds, isActive]);
 
+    const formatTime = () => {
+        let res = "";
+        
+        if (days < 10) {
+            res += "0" + days + ":";
+        } else {
+            res += days + ":"; 
+        }
+        
+        if (hours < 10) {
+            res += "0" + hours + ":";
+        } else {
+            res += hours + ":"; 
+        }
+        
+        if (minutes < 10) {
+            res += "0" + minutes + ":";
+        } else {
+            res += minutes + ":"; 
+        }
+
+        if (seconds < 10) {
+            res += "0" + seconds;
+        } else {
+            res += seconds; 
+        }
+
+        return res; 
+    }
+
     return (
         <TimerComponent>
-            <h1>HACKING ENDS IN...</h1>
+            <TimerHeading>HACKING ENDS IN...</TimerHeading>
             <TimerContainer>
-                <div>
-                    <div className="box">
-                    <p id="day">{days < 10 ? "0" + days : days}</p>
-                    <span className="text">day</span>
-                    </div>
-                </div>
-                <div>
-                    <div className="box">
-                    <p id="hour">{hours < 10 ? "0" + hours : hours}</p>
-                    <span className="text">hour</span>
-                    </div>
-                </div>
-                <div>
-                    <div className="box">
-                    <p id="minute">{minutes < 10 ? "0" + minutes : minutes}</p>
-                    <span className="text">min</span>
-                    </div>
-                </div>
-                <div>
-                    <div className="box">
-                    <p id="second">{seconds < 10 ? "0" + seconds : seconds}</p>
-                    <span className="text">sec</span>
-                    </div>
-                </div>
+                <Timer>{formatTime()}</Timer>
+                <TimeLabels>
+                    <p>day</p>
+                    <p>hr</p>
+                    <p>min</p>
+                    <p>sec</p>
+                </TimeLabels>
             </TimerContainer>
         </TimerComponent>
     );

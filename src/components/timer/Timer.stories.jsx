@@ -30,5 +30,5 @@ const Template = (args) => <TimerComponentContainer {...args} />;
 export const Timer = Template.bind({});
 Timer.args = {
     isActive: false,
-    time: 10
+    time: 100
 };
