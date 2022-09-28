@@ -31,19 +31,11 @@ const TimerLabels = styled.div`
 
 const TimerComponentContainer = ({isActive, time}) => {
     const [timeRemaining, setTimeRemaining] = useState(time);
-    const [seconds, setSeconds] = useState(Math.floor(time % 60));
-    const [minutes, setMinutes] = useState(Math.floor(time / 60) % 60);
-    const [hours, setHours] = useState(Math.floor(time / 3600) % 24);
-    const [days, setDays] = useState(Math.floor(time / 86400));
-
+    
     const getTime = useCallback(() => {
         let newTime = timeRemaining - 1;
 
         setTimeRemaining(newTime);
-        setSeconds(Math.floor(newTime % 60));
-        setMinutes(Math.floor(newTime / 60) % 60);
-        setHours(Math.floor(newTime / 3600) % 24);
-        setDays(Math.floor(newTime / 86400));
     }, [timeRemaining]);
 
     useEffect(() => {
@@ -55,6 +47,11 @@ const TimerComponentContainer = ({isActive, time}) => {
     }, [getTime, timeRemaining, isActive]);
 
     const formatTime = () => {
+        let seconds = Math.floor(timeRemaining % 60);
+        let minutes = Math.floor(timeRemaining / 60) % 60;
+        let hours = Math.floor(timeRemaining / 3600) % 24;
+        let days = Math.floor(timeRemaining / 86400);
+
         let res = "";
         
         if (days < 10) {
