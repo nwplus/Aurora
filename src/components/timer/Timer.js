@@ -25,34 +25,34 @@ const Timer = styled.span`
     ${TimerNumsCSS}
 `;
 
-const TimeLabels = styled.div`
+const TimerLabels = styled.div`
     ${TimerLabelsCSS}
 `;
 
 const TimerComponentContainer = ({isActive, time}) => {
-    const [seconds, setSeconds] = useState(time);
-    const [minutes, setMinutes] = useState(0);
-    const [hours, setHours] = useState(0);
-    const [days, setDays] = useState(0);
+    const [timeRemaining, setTimeRemaining] = useState(time);
+    const [seconds, setSeconds] = useState(Math.floor(time % 60));
+    const [minutes, setMinutes] = useState(Math.floor(time / 60) % 60);
+    const [hours, setHours] = useState(Math.floor(time / 3600) % 24);
+    const [days, setDays] = useState(Math.floor(time / 86400));
 
-    // useCallback prevents getTime() from being recreated at every rerender via caching
     const getTime = useCallback(() => {
-        let newTime = seconds - 1;
+        let newTime = timeRemaining - 1;
 
-        setSeconds(newTime % 60);
+        setTimeRemaining(newTime);
+        setSeconds(Math.floor(newTime % 60));
         setMinutes(Math.floor(newTime / 60) % 60);
         setHours(Math.floor(newTime / 3600) % 24);
         setDays(Math.floor(newTime / 86400));
-    }, [seconds]);
+    }, [timeRemaining]);
 
     useEffect(() => {
-        if (isActive && seconds > 0) {
-            // interval is a timer created by setInterval
+        if (isActive && timeRemaining > 0) {
             const interval = setInterval(() => getTime(), 1000);
     
             return () => clearInterval(interval);
         }
-    }, [getTime, seconds, isActive]);
+    }, [getTime, timeRemaining, isActive]);
 
     const formatTime = () => {
         let res = "";
@@ -89,12 +89,12 @@ const TimerComponentContainer = ({isActive, time}) => {
             <TimerHeading>HACKING ENDS IN...</TimerHeading>
             <TimerContainer>
                 <Timer>{formatTime()}</Timer>
-                <TimeLabels>
+                <TimerLabels>
                     <p>day</p>
                     <p>hr</p>
                     <p>min</p>
                     <p>sec</p>
-                </TimeLabels>
+                </TimerLabels>
             </TimerContainer>
         </TimerComponent>
     );

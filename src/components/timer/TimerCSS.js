@@ -26,6 +26,7 @@ export const TimerNumsCSS = `
     font-size: 4.5rem;
     justify-content: center;
     align-items: center;
+    width: 100%; 
 `;
 
 export const TimerLabelsCSS = `

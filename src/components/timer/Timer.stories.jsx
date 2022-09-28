@@ -29,6 +29,6 @@ const Template = (args) => <TimerComponentContainer {...args} />;
 
 export const Timer = Template.bind({});
 Timer.args = {
-    isActive: false,
+    isActive: true,
     time: 100
 };
