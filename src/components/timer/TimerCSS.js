@@ -4,7 +4,6 @@ export const TimerCSS = `
     height: 160px; 
     width: 410px;
     color: ${colors.white};
-    background-color: #333;
     display: flex;
     flex-direction: column;
     font-family: 'HK Grotesk', sans-serif;
