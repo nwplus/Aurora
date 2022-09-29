@@ -1,4 +1,4 @@
-import { colors } from "../colors/index";
+import { colors } from '../../colors/index';
 
 export const TimerCSS = `
     height: 160px; 
@@ -13,7 +13,7 @@ export const TimerCSS = `
 
 export const TimerHeadingCSS = `
     font-size: 1.25rem;
-`
+`;
 
 export const TimerContainerCSS = `
     display: flex;
