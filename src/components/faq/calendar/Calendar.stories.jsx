@@ -15,9 +15,9 @@ export default {
   // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <Calendar {...args} />;
 
-export const Calendar = Template.bind({});
+// export const Calendar = Template.bind({});
 
-Calendar.args = {
-  active: true,
-  name: 'Calendar'
-}
+// Calendar.args = {
+//   active: true,
+//   name: 'Calendar'
+// }
