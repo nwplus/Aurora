@@ -21,9 +21,9 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <Number {...args} />;
 
-export const NumberToggle = Template.bind({});
+export const ControlNumber = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-NumberToggle.args = {
+ControlNumber.args = {
   isSelected: false,
   number: 1,
 };
