@@ -24,3 +24,11 @@ Control.args = {
   checked: false,
   disabled: false,
 };
+
+export const ControlLabel = Template.bind({});
+ControlLabel.args = {
+  variant: "control",
+  checked: false,
+  disabled: false,
+  label: "Label"
+};

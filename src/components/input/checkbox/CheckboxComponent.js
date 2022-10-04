@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Checkbox } from "@mui/material";
+import React, { useState, useEffect } from 'react';
+import { Checkbox, FormControlLabel } from '@mui/material';
+import { colors } from '../../colors/Colors';
 
-import { colors } from "../../colors/Colors";
-
-const CheckboxComponent = ({ disabled, variant }) => {
+const CheckboxComponent = ({ disabled, variant, label }) => {
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
@@ -11,23 +10,38 @@ const CheckboxComponent = ({ disabled, variant }) => {
   }, [disabled]);
 
   switch (variant) {
-    case "control":
+    case 'control':
       return (
-        <Checkbox
-          checked={checked}
+        <FormControlLabel
           sx={{
-            bgcolor: "transparent",
-            color: `${colors.white}`,
-            "&.Mui-checked": {
-              color: `${colors.emerald400}`,
+            color: checked ? `${colors.emerald400}` : `${colors.white}`,
+            '&:hover > span': {
+              color: disabled ? `${colors.muiGray}` : `${colors.emerald400}`,
             },
-            "&:hover": {
-              bgcolor: "transparent",
-              color: `${colors.emerald400}`,
+            '&:disabled > span': {
+              color: `gray`,
             },
           }}
-          disabled={disabled}
-          onClick={() => setChecked(!checked)}
+          label={<div>{label}</div>}
+          control={
+            <Checkbox
+              checked={checked}
+              sx={{
+                bgcolor: 'transparent',
+                color: `${colors.white}`,
+                '&.Mui-checked': {
+                  color: `${colors.emerald400}`,
+                },
+                '&:hover': {
+                  bgcolor: 'transparent',
+                  color: `${colors.emerald400}`,
+                  transition: '300ms',
+                },
+              }}
+              disabled={disabled}
+              onClick={() => setChecked(!checked)}
+            />
+          }
         />
       );
 
@@ -37,13 +51,13 @@ const CheckboxComponent = ({ disabled, variant }) => {
         <Checkbox
           defaultChecked
           sx={{
-            bgcolor: "transparent",
+            bgcolor: 'transparent',
             color: `${colors.white}`,
-            "&.Mui-checked": {
+            '&.Mui-checked': {
               color: `#000`,
             },
-            "&:hover": {
-              bgcolor: "transparent",
+            '&:hover': {
+              bgcolor: 'transparent',
               color: `#000`,
             },
           }}
