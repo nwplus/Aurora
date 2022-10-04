@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Checkbox, FormControlLabel } from '@mui/material';
-import styled from 'styled-components';
 import { colors } from '../../colors/Colors';
-
-const Label = styled.div``;
 
 const CheckboxComponent = ({ disabled, variant, label }) => {
   const [checked, setChecked] = useState(false);
-  console.log('label', disabled);
 
   useEffect(() => {
     if (disabled) setChecked(false);
@@ -26,7 +22,7 @@ const CheckboxComponent = ({ disabled, variant, label }) => {
               color: `gray`,
             },
           }}
-          label={<Label>{label}</Label>}
+          label={<div>{label}</div>}
           control={
             <Checkbox
               checked={checked}
