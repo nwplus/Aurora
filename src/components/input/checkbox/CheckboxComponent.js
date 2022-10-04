@@ -20,7 +20,7 @@ const CheckboxComponent = ({ disabled, variant, label }) => {
           sx={{
             color: checked ? `${colors.emerald400}` : `${colors.white}`,
             '&:hover > span': {
-              color: `${colors.emerald400}`,
+              color: disabled ? `${colors.muiGray}` : `${colors.emerald400}`,
             },
             '&:disabled > span': {
               color: `gray`,
@@ -38,9 +38,7 @@ const CheckboxComponent = ({ disabled, variant, label }) => {
                 },
                 '&:hover': {
                   bgcolor: 'transparent',
-                  color: disabled
-                    ? `${colors.muiGray}`
-                    : `${colors.emerald400}`,
+                  color: `${colors.emerald400}`,
                   transition: '300ms',
                 },
               }}

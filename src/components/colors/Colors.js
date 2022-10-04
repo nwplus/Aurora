@@ -27,5 +27,5 @@ export const colors = {
   gradientMainDark: 'linear-gradient(90deg, #00DBCE 0%, #00D88A 100%)',
   gradientMainLight: 'linear-gradient(90deg, #D7FFF0 0%, #7BFFCF 100%)',
   gradientTransparentMask: 'linear-gradient(#fff 0 0)',
-  muiGray: 'rgba(0,0,0,0.38)',
+  muiGray: 'rgba(0,0,0,0.26)',
 };
