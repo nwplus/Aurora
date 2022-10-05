@@ -7,3 +7,5 @@ export * from "./page";
 export * from "./controls";
 
 export * from "./input";
+
+export * from "./faq";
