@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import { CalendarActiveCSS, CalendarInactiveCSS, CalendarTitleCSS, CalendarDesCSS, CalendarTagCSS} from "./CalendarCSS"
 
-import { CalendarTag } from '../../../assets/tag_filled.svg';
+import CalendarTagImage from '../../../assets/tag_filled.svg';
 
 // Calendar
 const CalendarComponent = (props) => {
@@ -43,8 +43,22 @@ const CalendarComponent = (props) => {
     const CalendarDes = styled.p `
         ${CalendarDesCSS}
     `
+    // Tag image should not be visible for inactive calendars
+    const TagVisibility = () => {
+        let tagstyles = ""
+        // false
+        if (!props.active) {
+            // Active calendar
+            tagstyles += `
+                display:none;
+            `
+        }
+        return tagstyles;
+    }
+
     const CalendarTag = styled.div`
         ${CalendarTagCSS}
+        ${TagVisibility()}
     `
     return (
         // CalendarDes will disappear if the text inside it is empty
@@ -52,7 +66,7 @@ const CalendarComponent = (props) => {
             <CalendarTitle>
                 {props.title}
                 <CalendarTag>
-                    <img src={CalendarTag}/>
+                    <img src={CalendarTagImage}/>
                 </CalendarTag>
             </CalendarTitle>
             <CalendarDes>{props.date}</CalendarDes>

@@ -35,7 +35,7 @@ export const CalendarDesCSS = `
 
 export const CalendarTagCSS = `
     text-align: right;
-    margin-top: -20px;
+    margin-top: -25px;
     height: 20px;
     width: auto;
 `
