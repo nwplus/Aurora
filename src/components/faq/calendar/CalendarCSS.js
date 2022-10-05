@@ -13,10 +13,6 @@ export const CalendarActiveCSS =  `
     width: 250px;
 `
 
-export const CalendarSmallCSS =  `
-    
-`
-
 export const CalendarInactiveCSS =  `
     padding: 10px 20px;
     /* Red/red-500 */
@@ -35,4 +31,11 @@ export const CalendarTitleCSS = `
 
 export const CalendarDesCSS = `
     
+`
+
+export const CalendarTagCSS = `
+    text-align: right;
+    margin-top: -20px;
+    height: 20px;
+    width: auto;
 `

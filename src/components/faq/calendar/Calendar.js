@@ -1,10 +1,8 @@
 import React from 'react';
-
 import styled from "styled-components";
+import { CalendarActiveCSS, CalendarInactiveCSS, CalendarTitleCSS, CalendarDesCSS, CalendarTagCSS} from "./CalendarCSS"
 
-import { CalendarActiveCSS, CalendarSmallCSS, CalendarInactiveCSS, CalendarTitleCSS, CalendarDesCSS} from "./CalendarCSS"
-
-// import css later
+import { CalendarTag } from '../../../assets/tag_filled.svg';
 
 // Calendar
 const CalendarComponent = (props) => {
@@ -45,10 +43,18 @@ const CalendarComponent = (props) => {
     const CalendarDes = styled.p `
         ${CalendarDesCSS}
     `
+    const CalendarTag = styled.div`
+        ${CalendarTagCSS}
+    `
     return (
         // CalendarDes will disappear if the text inside it is empty
         <CalendarComponent>
-            <CalendarTitle>{props.title}</CalendarTitle>
+            <CalendarTitle>
+                {props.title}
+                <CalendarTag>
+                    <img src={CalendarTag}/>
+                </CalendarTag>
+            </CalendarTitle>
             <CalendarDes>{props.date}</CalendarDes>
             <CalendarDes>{checkDescription()}</CalendarDes>
         </CalendarComponent>
