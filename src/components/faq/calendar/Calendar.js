@@ -5,20 +5,20 @@ import { CalendarActiveCSS, CalendarInactiveCSS, CalendarTitleCSS, CalendarTagCS
 import CalendarTagImage from '../../../assets/tag_filled.svg';
 
 // Calendar
-const CalendarComponent = (props) => {
+const CalendarComponent = ({description, active, title, date}) => {
     let styles = ""
     // If description is too long, cut it
     const checkDescription = () => {
-        let modified_calendar_description = props.description
-        if (props.description.length > 64) {
-            modified_calendar_description = props.description.substring(0, 64) + " ..."
+        let modified_calendar_description = description
+        if (description.length > 64) {
+            modified_calendar_description = description.substring(0, 64) + " ..."
         }
     
         return modified_calendar_description;
     }
     const calendarStyles = () => {
         // true
-        if (props.active) {
+        if (active) {
             // Active calendar
             return {CalendarActiveCSS};
             
@@ -41,7 +41,7 @@ const CalendarComponent = (props) => {
     const TagVisibility = () => {
         let tagstyles = ""
         // false
-        if (!props.active) {
+        if (!active) {
             // Active calendar
             tagstyles += `
                 display:none;
@@ -58,12 +58,12 @@ const CalendarComponent = (props) => {
         // CalendarDes will disappear if the text inside it is empty
         <CalendarComponent>
             <CalendarTitle>
-                {props.title}
+                {title}
                 <CalendarTag>
                     <img src={CalendarTagImage}/>
                 </CalendarTag>
             </CalendarTitle>
-            <p>{props.date}</p>
+            <p>{date}</p>
             <p>{checkDescription()}</p>
         </CalendarComponent>
     )
