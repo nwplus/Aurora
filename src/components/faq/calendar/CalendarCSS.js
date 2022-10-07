@@ -11,6 +11,9 @@ export const CalendarActiveCSS =  `
     text-align: left;
     font-family: "", sans-serif;
     width: 250px;
+
+    padding-left: 10px;
+    padding-right: 10px;
 `
 
 export const CalendarInactiveCSS =  `
@@ -23,14 +26,13 @@ export const CalendarInactiveCSS =  `
     text-align: left;
     font-family: "", sans-serif;
     width: 250px;
+
+    padding-left: 10px;
+    padding-right: 10px;
 `
 
 export const CalendarTitleCSS = `
     font-weight: bold;
-`
-
-export const CalendarDesCSS = `
-    
 `
 
 export const CalendarTagCSS = `
@@ -39,3 +41,4 @@ export const CalendarTagCSS = `
     height: 20px;
     width: auto;
 `
+

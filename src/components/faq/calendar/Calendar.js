@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import { CalendarActiveCSS, CalendarInactiveCSS, CalendarTitleCSS, CalendarDesCSS, CalendarTagCSS} from "./CalendarCSS"
+import { CalendarActiveCSS, CalendarInactiveCSS, CalendarTitleCSS, CalendarTagCSS} from "./CalendarCSS"
 
 import CalendarTagImage from '../../../assets/tag_filled.svg';
 
@@ -20,18 +20,15 @@ const CalendarComponent = (props) => {
         // true
         if (props.active) {
             // Active calendar
-            styles += `
-                ${CalendarActiveCSS}
-            `
+            return {CalendarActiveCSS};
+            
         }
         // false
         else {
             // Inactive calendar
-            styles += `
-                ${CalendarInactiveCSS}
-            `
+            return {CalendarInactiveCSS};
+            
         }
-        return styles;
     }
 
     const CalendarComponent = styled.div `
@@ -39,9 +36,6 @@ const CalendarComponent = (props) => {
     `
     const CalendarTitle = styled.p `
         ${CalendarTitleCSS}
-    `
-    const CalendarDes = styled.p `
-        ${CalendarDesCSS}
     `
     // Tag image should not be visible for inactive calendars
     const TagVisibility = () => {
@@ -55,7 +49,7 @@ const CalendarComponent = (props) => {
         }
         return tagstyles;
     }
-
+ 
     const CalendarTag = styled.div`
         ${CalendarTagCSS}
         ${TagVisibility()}
@@ -69,8 +63,8 @@ const CalendarComponent = (props) => {
                     <img src={CalendarTagImage}/>
                 </CalendarTag>
             </CalendarTitle>
-            <CalendarDes>{props.date}</CalendarDes>
-            <CalendarDes>{checkDescription()}</CalendarDes>
+            <p>{props.date}</p>
+            <p>{checkDescription()}</p>
         </CalendarComponent>
     )
 }
