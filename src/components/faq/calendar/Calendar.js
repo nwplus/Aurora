@@ -4,6 +4,10 @@ import { CalendarActiveCSS, CalendarInactiveCSS, CalendarTitleCSS, CalendarTagCS
 
 import CalendarTagImage from '../../../assets/tag_filled.svg';
 
+const CalendarTitle = styled.p `
+    ${CalendarTitleCSS}
+`
+
 // Calendar
 const CalendarComponent = ({description, active, title, date}) => {
     let styles = ""
@@ -34,9 +38,7 @@ const CalendarComponent = ({description, active, title, date}) => {
     const CalendarComponent = styled.div `
         ${calendarStyles}
     `
-    const CalendarTitle = styled.p `
-        ${CalendarTitleCSS}
-    `
+
     // Tag image should not be visible for inactive calendars
     const TagVisibility = () => {
         let tagstyles = ""
