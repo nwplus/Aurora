@@ -20,4 +20,5 @@ export const PrimarySelect = Template.bind({});
 PrimarySelect.args = {
   placeholder: 'Level of Education',
   options: sampleOptions,
+  error: false,
 };

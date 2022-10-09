@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from '../../colors';
@@ -19,6 +20,7 @@ const Input = styled.input`
   display: flex;
   outline: none;
   padding-left: 12px;
+  caret-color: transparent;
   color: ${({ selectedOption }) =>
     selectedOption ? `${colors.emerald400}` : 'white'};
 
@@ -27,13 +29,15 @@ const Input = styled.input`
   }
 
   &:hover {
-    color: ${colors.emerald400};
+	color: ${({ error }) => (error ? `white` : ` ${colors.emerald400}`)}
     border: 2px solid ${colors.emerald400};
   }
 
   &:focus {
     border: 2px solid ${colors.emerald400};
   }
+
+  border: ${({ error }) => (error ? `2px solid ${colors.red500}` : '')};
 `;
 
 const OptionsWrapper = styled.div`
@@ -61,9 +65,15 @@ const Option = styled.div`
   }
 `;
 
-const DropdownSelectComponent = ({ placeholder, options }) => {
+const ErrorMsg = styled.div`
+  color: ${colors.red500};
+  margin-top: 8px;
+`;
+
+const DropdownSelectComponent = ({ placeholder, options, error }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [hasError, setHasError] = useState(error);
 
   return (
     <Wrapper>
@@ -73,6 +83,7 @@ const DropdownSelectComponent = ({ placeholder, options }) => {
         showOptions={showOptions}
         selectedOption={selectedOption}
         value={selectedOption}
+        error={hasError}
       />
       {showOptions && options.length > 0 && (
         <OptionsWrapper>
@@ -83,6 +94,7 @@ const DropdownSelectComponent = ({ placeholder, options }) => {
                 onClick={() => {
                   setSelectedOption(option);
                   setShowOptions(false);
+                  setHasError(false);
                 }}
                 isLastOption={index === options.length - 1}
               >
@@ -92,6 +104,7 @@ const DropdownSelectComponent = ({ placeholder, options }) => {
           })}
         </OptionsWrapper>
       )}
+      {!showOptions && hasError && <ErrorMsg>Please select an option</ErrorMsg>}
     </Wrapper>
   );
 };
