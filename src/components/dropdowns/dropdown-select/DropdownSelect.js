@@ -12,13 +12,15 @@ const Input = styled.input`
   font-size: 16px;
   width: 275px;
   height: 40px;
-  background: black;
-  border-radius: ${(p) => (p.showOptions ? `7px 7px 0 0 ` : `7px`)};
-  border: 2px solid red;
+  background: transparent;
+  border-radius: ${({ showOptions }) => (showOptions ? `7px 7px 0 0 ` : `7px`)};
+  border: ${({ showOptions }) =>
+    showOptions ? `2px solid ${colors.emerald400}` : ' 2px solid white'};
   display: flex;
   outline: none;
   padding-left: 12px;
-  color: white;
+  color: ${({ selectedOption }) =>
+    selectedOption ? `${colors.emerald400}` : 'white'};
 
   ::placeholder {
     color: ${colors.grey500};
@@ -26,6 +28,11 @@ const Input = styled.input`
 
   &:hover {
     color: ${colors.emerald400};
+    border: 2px solid ${colors.emerald400};
+  }
+
+  &:focus {
+    border: 2px solid ${colors.emerald400};
   }
 `;
 
@@ -34,6 +41,7 @@ const OptionsWrapper = styled.div`
   width: 289px;
   border: 2px solid ${colors.emerald400};
   border-radius: 0 0 7px 7px;
+  margin-top: -1px;
 `;
 
 const Option = styled.div`
@@ -63,6 +71,8 @@ const DropdownSelectComponent = ({ placeholder, options }) => {
         onClick={() => setShowOptions(!showOptions)}
         placeholder={placeholder}
         showOptions={showOptions}
+        selectedOption={selectedOption}
+        value={selectedOption}
       />
       {showOptions && options.length > 0 && (
         <OptionsWrapper>
