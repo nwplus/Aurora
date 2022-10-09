@@ -3,19 +3,22 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from '../../colors';
 
-const Wrapper = styled.input`
+const Wrapper = styled.div`
   font-family: 'HK Grotesk', sans-serif;
+  transition: 300ms;
+`;
+
+const Input = styled.input`
   font-size: 16px;
   width: 275px;
   height: 40px;
   background: black;
-  border-radius: 7px;
-  border: 2px solid white;
+  border-radius: ${(p) => (p.showOptions ? `7px 7px 0 0 ` : `7px`)};
+  border: 2px solid red;
   display: flex;
   outline: none;
   padding-left: 12px;
   color: white;
-  transition: 300ms;
 
   ::placeholder {
     color: ${colors.grey500};
@@ -28,38 +31,58 @@ const Wrapper = styled.input`
 
 const OptionsWrapper = styled.div`
   background: ${colors.midnight400};
-  width: 287px;
-  height: 200px;
-  margin-top: -2px;
+  width: 289px;
   border: 2px solid ${colors.emerald400};
   border-radius: 0 0 7px 7px;
 `;
 
 const Option = styled.div`
-  height: 22px;
-  width: 100%;
-  backgroundL blue;
+  font-size: 14px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  width: 289px;
   color: ${colors.midnight600};
+  margin: auto;
+
+  border-radius: ${({ isLastOption }) => (isLastOption ? '0 0 6px 6px' : '')};
+  margin-bottom: ${({ isLastOption }) => (isLastOption ? '-1px' : '')};
+
+  &:hover {
+    background: ${colors.midnight300};
+    font-weight: 700;
+  }
 `;
 
 const DropdownSelectComponent = ({ placeholder, options }) => {
   const [showOptions, setShowOptions] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
 
-  console.log(options);
   return (
-    <div>
-      <Wrapper
+    <Wrapper>
+      <Input
         onClick={() => setShowOptions(!showOptions)}
         placeholder={placeholder}
+        showOptions={showOptions}
       />
       {showOptions && options.length > 0 && (
         <OptionsWrapper>
           {options.map((option, index) => {
-            return <Option key={index}>Test</Option>;
+            return (
+              <Option
+                key={index}
+                onClick={() => {
+                  setSelectedOption(option);
+                  setShowOptions(false);
+                }}
+                isLastOption={index === options.length - 1}
+              >
+                {option}
+              </Option>
+            );
           })}
         </OptionsWrapper>
       )}
-    </div>
+    </Wrapper>
   );
 };
 
