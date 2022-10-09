@@ -3,6 +3,7 @@ import { colors } from '../../colors';
 export const WrapperCSS = `
     font-family: 'HK Grotesk', sans-serif;
     transition: 300ms;
+    position: relative;
 `;
 
 export const InputCSS = `
@@ -49,4 +50,10 @@ margin: auto;
 export const ErrorMsgCSS = `
 color: ${colors.red500};
 margin-top: 8px;
+`;
+
+export const ImageCSS = `
+
+position: absolute;
+left: 260px;
 `;

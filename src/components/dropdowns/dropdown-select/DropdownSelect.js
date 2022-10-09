@@ -3,12 +3,14 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import {
   ErrorMsgCSS,
+  ImageCSS,
   InputCSS,
   OptionCSS,
   OptionsWrapperCSS,
   WrapperCSS,
 } from './DropdownSelectCSS';
 import { colors } from '../../colors';
+import { CaretLeft, CaretDown } from '../../../assets/icons';
 
 const Wrapper = styled.div`
   ${WrapperCSS};
@@ -45,6 +47,13 @@ const ErrorMsg = styled.div`
   ${ErrorMsgCSS}
 `;
 
+const Image = styled.img`
+  ${ImageCSS}
+  top: ${({ showOptions }) => (showOptions ? '18px' : '21px')};
+  filter: ${({ selectedOption, hasError, showOptions }) =>
+    (!selectedOption && !showOptions) || hasError ? 'saturate(0)' : ''};
+`;
+
 const DropdownSelectComponent = ({ placeholder, options, error }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -60,6 +69,14 @@ const DropdownSelectComponent = ({ placeholder, options, error }) => {
         value={selectedOption}
         error={hasError}
       />
+      <Image
+        src={showOptions ? CaretLeft : CaretDown}
+        alt='Caret left'
+        showOptions={showOptions}
+        hasError={hasError}
+        selectedOption={selectedOption}
+      />
+
       {showOptions && options.length > 0 && (
         <OptionsWrapper>
           {options.map((option, index) => {
