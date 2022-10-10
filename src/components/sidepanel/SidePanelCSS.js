@@ -1,4 +1,4 @@
-import { colors } from "../colors/index";
+import { colors } from '../colors/index';
 
 export const SidePanelCSS = `
 
@@ -15,6 +15,8 @@ font-size: 1.6rem;
 line-height: 26px;
 
 letter-spacing: -0.45px;
+
+transition: 300ms;
 
 color: ${colors.white};
 background: transparent;
