@@ -26,7 +26,7 @@ const Radial = (props) => {
         ${(p) => getBorderColor(p)}
 
         &:hover {
-            border-color: ${colors.emerald400};
+            border-color: ${p=>p.active ? `${colors.emerald400}` : `${colors.grey600}`};
         }
 
         &:after {
