@@ -7,6 +7,12 @@ const Radial = (props) => {
 
     const [checked, setChecked] = useState(props.checked)
 
+    const getBorderColor = (p) => {
+        if (!p.active) return `border-color: ${colors.grey600};`
+        if (checked) return `border-color: ${colors.emerald400};`
+        return `border-color: white;`
+    };
+
     const Radial = styled.div`
         height: 23px;
         width: 23px;
@@ -16,9 +22,12 @@ const Radial = (props) => {
         background: transparent;
         position: relative;
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        ${p=>p.active 
-            ? `border-color: ${colors.emerald400};` 
-            : `border-color: ${colors.grey600};`}
+        transition: all 0.13s linear;
+        ${(p) => getBorderColor(p)}
+
+        &:hover {
+            border-color: ${colors.emerald400};
+        }
 
         &:after {
             content: '';
