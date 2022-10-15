@@ -1,7 +1,7 @@
 import { colors } from "../../colors";
 
 const ContainerCSS = `
-  font-family: "HK Grotesk";
+  font-family: "HK Grotesk", sans-serif;
   display: flex;
   border-radius: 50%;
   cursor: pointer;
