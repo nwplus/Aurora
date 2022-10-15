@@ -4,6 +4,10 @@ export * from "./header";
 
 export * from "./page";
 
-export * from "./select-controls/toggle";
+export * from "./controls";
 
-export * from "./select-controls/radial";
+export * from "./select-controls";
+
+export * from "./input";
+
+export * from "./faq";
