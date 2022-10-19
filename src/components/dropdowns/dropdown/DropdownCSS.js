@@ -1,4 +1,4 @@
-import { colors } from "../../colors/index";
+import { colors } from '../../colors/index';
 
 export const dropdownWrapperCSS = `
 	font-family: "HK Grotesk", sans-serif;
@@ -6,7 +6,8 @@ export const dropdownWrapperCSS = `
 	border-style: solid;
 	border-width: 2px;
 	border-color: ${colors.emerald400};
-`
+	cursor:pointer;
+`;
 
 export const dropdownOuterCSS = `
 	padding: 12px;
@@ -17,7 +18,7 @@ export const dropdownOuterCSS = `
 	display: flex;
 	justify-content: space-between;
 	border-radius: 5px 5px 0 0;
-`
+`;
 
 export const dropdownInnerCSS = `
 	font-size: 14px;
@@ -26,9 +27,9 @@ export const dropdownInnerCSS = `
 	color: ${colors.white};
 	background: ${colors.midnight450};
 	border-radius: 0 0 5px 5px;
-`
+`;
 
 export const dropdownArrowCSS = `
 	font-size: 18px;
 	padding-right: 5px;
-`
+`;

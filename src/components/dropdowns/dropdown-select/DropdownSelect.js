@@ -68,6 +68,7 @@ const DropdownSelectComponent = ({ placeholder, options, error }) => {
         selectedOption={selectedOption}
         value={selectedOption}
         error={hasError}
+        readOnly
       />
       <Image
         src={showOptions ? CaretLeft : CaretDown}
