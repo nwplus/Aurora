@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { colors } from "../../colors/Colors";
 import { Button } from "../../button/button/Button.js";
 
+
 const BackgroundImageContainer = styled.div`
   width: 100%;
   height: 100%;
 `;
 
 const CardContainer = styled.div`
-  width: 100%;
+  width: 450px;
   height: 500px;
   overflow: hidden;
   border-radius: 12px;
@@ -16,12 +17,12 @@ const CardContainer = styled.div`
   position: relative;
 
   & > ${BackgroundImageContainer} {
-    background: ${colors.gradientMainDark},
-      url(${(p) => p.imageLink}) center/cover;
+    background: url(${(p) => p.imageLink});
+    background-size: cover;
   }
 
   &:hover > ${BackgroundImageContainer} {
-    background: url(${(p) => p.imageLink}) cover;
+    background: url(${(p) => p.imageLink}) centre;
     transform: scale(1.1);
     transition: 300ms;
   }
