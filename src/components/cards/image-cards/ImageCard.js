@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../colors/Colors";
-import { Button } from "../../button/button/Button.js";
-
+import Button from "./ImageCardButton";
 
 const BackgroundImageContainer = styled.div`
   width: 100%;
@@ -17,12 +16,11 @@ const CardContainer = styled.div`
   position: relative;
 
   & > ${BackgroundImageContainer} {
-    background: url(${(p) => p.imageLink});
-    background-size: cover;
+    background: url(${(p) => p.imageLink}) center/cover;
   }
 
   &:hover > ${BackgroundImageContainer} {
-    background: url(${(p) => p.imageLink}) centre;
+    background: url(${(p) => p.imageLink}) cover;
     transform: scale(1.1);
     transition: 300ms;
   }
@@ -41,7 +39,6 @@ const OverLayFooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: auto;
-  width: 100%;
   align-items: center;
   padding: 1em 2.5em;
 `;
@@ -52,32 +49,48 @@ const EventDataContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 1.2em;
-  font-weight: bold;
+  font-family: "HK Grotesk", sans-serif;
+  font-weight: 700;
+  // flex-direction: column;
 `;
 
 // ${(p) => p.theme.mediaQueries.mobile} {
 //   flex-direction: column;
 // }
 
+const getTextColor = (p) => {
+  if (p.active) {
+    return `
+      background: -webkit-linear-gradient(92.58deg, #0DEFE1 0%, #78FF96 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    `;
+  } else {
+    return `
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: white;
+    `;
+  }
+};
+
 const EventRegistrationStatus = styled.div`
-  color: ${(p) => (p.active ? colors.gradientMain : "white")};
+  ${(p) => getTextColor(p)}
 `;
 
 const EventDateString = styled.div`
   color: ${colors.grey500};
 `;
 
-const ImageCardComponent = ({ active, link, dateString, imageLink }) => {
-  console.log(imageLink);
+const ImageCardComponent = ({ active, link, date, imageLink }) => {
   return (
     <CardContainer imageLink={imageLink}>
       <OverlayContainer>
         <OverLayFooterContainer>
           <EventDataContainer>
-            <EventRegistrationStatus registrationOpen={active}>
+            <EventRegistrationStatus active={active}>
               {`Registration ${active ? "Open" : "Closed"}`}
             </EventRegistrationStatus>
-            <EventDateString>{dateString}</EventDateString>
+            <EventDateString>{date}</EventDateString>
           </EventDataContainer>
           <Button
             height="3em"

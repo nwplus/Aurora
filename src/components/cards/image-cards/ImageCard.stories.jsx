@@ -1,5 +1,5 @@
 import React from "react";
-import HackCampSrc from './HackCamp2022.png'
+import HackCampSrc from "./HackCamp2022.png";
 import ImageCardComponent from "./ImageCard";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -36,7 +36,7 @@ export default {
   },
 };
 
-console.log(HackCampSrc)
+console.log(HackCampSrc);
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <ImageCardComponent {...args} />;
@@ -47,5 +47,5 @@ ImageCard.args = {
   active: true,
   link: "https://hackcamp.nwplus.io",
   date: "Nov 5 - 6",
-imageLink: HackCampSrc
+  imageLink: HackCampSrc,
 };
