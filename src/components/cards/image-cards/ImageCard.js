@@ -5,7 +5,10 @@ import Button from "./ImageCardButton";
 const BackgroundImageContainer = styled.div`
   width: 100%;
   height: 100%;
-`;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 47.69%, rgba(0, 0, 0, 0.8) 100%), url(${(p) => p.imageLink}) center/cover;
+  background: ${(p) => !p.active && `linear-gradient(180deg, rgba(0, 0, 0, 0.3) 47.69%, rgba(0, 0, 0, 0.8) 82.29%), url(${p.imageLink}) center/cover`};
+`
+ ;
 
 const CardContainer = styled.div`
   width: 450px;
@@ -14,11 +17,6 @@ const CardContainer = styled.div`
   border-radius: 12px;
   margin: 2em;
   position: relative;
-
-  & > ${BackgroundImageContainer} {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 47.69%, rgba(0, 0, 0, 0.8) 100%), url(${(p) => p.imageLink}) center/cover;
-    
-  }
 
   &:hover > ${BackgroundImageContainer} {
     background: url(${(p) => p.imageLink}) cover;
@@ -84,7 +82,7 @@ const EventDateString = styled.div`
 
 const ImageCardComponent = ({ active, link, date, imageLink }) => {
   return (
-    <CardContainer imageLink={imageLink}>
+    <CardContainer imageLink={imageLink} >
       <OverlayContainer>
         <OverLayFooterContainer>
           <EventDataContainer>
@@ -103,7 +101,7 @@ const ImageCardComponent = ({ active, link, date, imageLink }) => {
           </Button>
         </OverLayFooterContainer>
       </OverlayContainer>
-      <BackgroundImageContainer />
+      <BackgroundImageContainer imageLink={imageLink} active={active}/>
     </CardContainer>
   );
 };
