@@ -15,7 +15,7 @@ const StyledButton = styled.a`
     margin: 1em ${p => p.noMargin ? '0em' : '0.5em'};
     padding: ${p => p.padding ? p.padding : '0'};
     border: ${p => p.hollow && `2px solid ${colors.gradientMain}`};
-    color: "black";
+    color: black;
 `
 
 const Button = ({ link, ...props }) => <StyledButton href={link} {...props} />

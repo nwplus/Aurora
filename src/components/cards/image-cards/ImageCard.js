@@ -16,7 +16,8 @@ const CardContainer = styled.div`
   position: relative;
 
   & > ${BackgroundImageContainer} {
-    background: url(${(p) => p.imageLink}) center/cover;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 47.69%, rgba(0, 0, 0, 0.8) 100%), url(${(p) => p.imageLink}) center/cover;
+    
   }
 
   &:hover > ${BackgroundImageContainer} {
