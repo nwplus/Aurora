@@ -50,12 +50,7 @@ const EventDataContainer = styled.div`
   font-size: 1.2em;
   font-family: "HK Grotesk", sans-serif;
   font-weight: 700;
-  // flex-direction: column;
 `;
-
-// ${(p) => p.theme.mediaQueries.mobile} {
-//   flex-direction: column;
-// }
 
 const getTextColor = (p) => {
   if (p.active) {
