@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../colors/Colors";
 import { useState } from 'react';
-import { TagsCSS } from "./TagsCSS";
 
 const Tags = (props) => {
 
