@@ -46,11 +46,11 @@ const SubscribeButton = styled.button`
   ${SubscribeButtonCSS}
 `;
 
-const SignupModalContainer = ({ clickEvent }) => {
+const SignupModalContainer = ({ onSubscribeClick, onCloseClick }) => {
   return (
     <SignupModalComponent>
       <LogoImage src={Logo} />
-      <CloseIcon src={ClosedIcon} />
+      <CloseIcon onClick={onCloseClick} src={ClosedIcon} />
       <HeaderText>nwPlus Newsletter Sign-up</HeaderText>
       <BodyText>
         Subscribe to our newsletter to stay up to date and for upcoming events!
@@ -58,7 +58,7 @@ const SignupModalContainer = ({ clickEvent }) => {
 
       <InputContainer>
         <Input placeholder="hacker@nwplus.io" />
-        <SubscribeButton onClick={clickEvent}>Subscribe</SubscribeButton>
+        <SubscribeButton onClick={onSubscribeClick}>Subscribe</SubscribeButton>
       </InputContainer>
     </SignupModalComponent>
   );
