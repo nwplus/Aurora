@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
-import {  
-          ErrorMsgCSS,
-          OptionCSS,
-          OptionsWrapperCSS,
-          WrapperCSS, 
-          InputCSS } from './DropdownComplexSearchCSS';
+import {
+  ErrorMsgCSS,
+  OptionCSS,
+  OptionsWrapperCSS,
+  WrapperCSS,
+  InputCSS,
+} from './DropdownComplexSearchCSS';
 import { colors } from '../../colors';
 
 import { Search } from '../../../assets/icons';
@@ -22,14 +23,16 @@ const Image = styled.img`
   margin-top: 10px;
 `;
 
-
 const Input = styled.input`
   ${InputCSS}
   padding-left: 40px;
   border-radius: ${({ showOptions }) => (showOptions ? `7px 7px 0 0 ` : `7px`)};
   border: ${({ showOptions }) =>
-    showOptions ? `2px solid ${colors.emerald400}` : `2px solid ${colors.grey500}`};
-  color: ${({ selectedOption }) => selectedOption ? `${colors.emerald400}` : `${colors.grey500}`};
+    showOptions
+      ? `2px solid ${colors.emerald400}`
+      : `2px solid ${colors.grey500}`};
+  color: ${({ selectedOption }) =>
+    selectedOption ? `${colors.emerald400}` : `${colors.grey500}`};
 
   &:hover {
 	color: ${({ error }) => (error ? `white` : ` ${colors.emerald400}`)}
@@ -38,7 +41,6 @@ const Input = styled.input`
 
   border: ${({ error }) => (error ? `2px solid ${colors.red500}` : '')};
 `;
-
 
 const OptionsWrapper = styled.div`
   ${OptionsWrapperCSS}
@@ -57,7 +59,7 @@ const ErrorMsg = styled.div`
 
 const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
   const [showOptions, setShowOptions] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState('');
   const [hasError, setHasError] = useState(error);
 
   const displayPrompt = event => {
@@ -119,52 +121,51 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
         )
       }
     }
-
-  }
+  };
 
   return (
     <Wrapper>
-        
-        <Image
-          src={ Search }
-          alt='Search icon'
-        />
+      <Image src={Search} alt='Search icon' />
 
-        <Input 
-            onClick={() => setShowOptions(!showOptions)}
-            placeholder={placeholder}
-            showOptions={showOptions}
-            selectedOption={selectedOption}
-            onInput={displayPrompt}
-            value={selectedOption}
-            error={hasError}
-        />
+      <Input
+        onClick={() => setShowOptions(!showOptions)}
+        placeholder={placeholder}
+        showOptions={showOptions}
+        selectedOption={selectedOption}
+        onInput={displayPrompt}
+        value={selectedOption}
+        error={hasError}
+        onChange={(e) => {
+          setSelectedOption(e.target.value);
+        }}
+        id="Test"
+      />
 
-        {displayPrompt()}
+      {/* {displayPrompt()} */}
 
-        {/* {showOptions && options.length > 0 && (
-          <OptionsWrapper>
-            {options.map((option, index) => {
-              return (
-                <Option
-                  key={index}
-                  onClick={() => {
-                    setSelectedOption(option);
-                    setShowOptions(false);
-                    setHasError(false);
-                  }}
-                  isLastOption={index === options.length - 1}
-                >
-                  {option}
-                </Option>
-              );
-            })}
+      {/* {showOptions && options.length > 0 && (
+        <OptionsWrapper>
+          {options.map((option, index) => {
+            return (
+              <Option
+                key={index}
+                onClick={() => {
+                  setSelectedOption(option);
+                  setShowOptions(false);
+                  setHasError(false);
+                }}
+                isLastOption={index === options.length - 1}
+              >
+                {option}
+              </Option>
+            );
+          })}
+        </OptionsWrapper>
+      )} */}
 
-
-          </OptionsWrapper>
-        )} */}
-        
-        {!showOptions && hasError && <ErrorMsg>Please enter your school</ErrorMsg>}
+      {!showOptions && hasError && (
+        <ErrorMsg>Please enter your school</ErrorMsg>
+      )}
     </Wrapper>
   );
 };
