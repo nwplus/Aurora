@@ -62,12 +62,12 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
   const [selectedOption, setSelectedOption] = useState('');
   const [hasError, setHasError] = useState(error);
 
-  const displayPrompt = event => {
-    if (!selectedOption) {
+  const displayPrompt = (value) => {
+    if (!event.target.value) {
       // Render "Start typing to search"
       return (
         <OptionsWrapper>
-          <Option>Start typing to search</Option>
+          <Option>Start typing to search...</Option>
         </OptionsWrapper>
       )
     }
@@ -84,7 +84,6 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
 
       if (filteredSchools.length > 0) {
         // Render items in filteredSchools as options
-        // alert(filteredSchools)
         return (
           <OptionsWrapper>
             {filteredSchools.map((option, index) => {
@@ -128,44 +127,22 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
       <Image src={Search} alt='Search icon' />
 
       <Input
-        onClick={() => setShowOptions(!showOptions)}
         placeholder={placeholder}
         showOptions={showOptions}
         selectedOption={selectedOption}
-        onInput={displayPrompt}
+        onClick={() => setShowOptions(!showOptions)}
         value={selectedOption}
         error={hasError}
         onChange={(e) => {
           setSelectedOption(e.target.value);
         }}
-        id="Test"
       />
 
-      {/* {displayPrompt()} */}
-
-      {/* {showOptions && options.length > 0 && (
-        <OptionsWrapper>
-          {options.map((option, index) => {
-            return (
-              <Option
-                key={index}
-                onClick={() => {
-                  setSelectedOption(option);
-                  setShowOptions(false);
-                  setHasError(false);
-                }}
-                isLastOption={index === options.length - 1}
-              >
-                {option}
-              </Option>
-            );
-          })}
-        </OptionsWrapper>
-      )} */}
-
-      {!showOptions && hasError && (
-        <ErrorMsg>Please enter your school</ErrorMsg>
+      {showOptions && (
+        displayPrompt({selectedOption})
       )}
+
+      {!showOptions && hasError && <ErrorMsg>Please enter your school</ErrorMsg>}
     </Wrapper>
   );
 };

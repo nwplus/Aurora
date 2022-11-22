@@ -4,6 +4,7 @@ export const WrapperCSS = `
     font-family: 'HK Grotesk', sans-serif;
     transition: 300ms;
     position: relative;
+    cursor: pointer;
 `;
 
 export const InputCSS = `
@@ -14,7 +15,6 @@ export const InputCSS = `
     display: flex;
     outline: none;
     padding-left: 12px;
-    caret-color: transparent;
     border: 2px solid ${colors.grey500};
     color: ${colors.grey500};
 
