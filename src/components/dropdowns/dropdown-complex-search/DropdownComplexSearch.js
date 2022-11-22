@@ -63,7 +63,7 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
   const [hasError, setHasError] = useState(error);
 
   const displayPrompt = (value) => {
-    if (!event.target.value) {
+    if (!value) {
       // Render "Start typing to search"
       return (
         <OptionsWrapper>
@@ -77,7 +77,7 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
       const filteredSchools = []
       for (let i=0; i < options.length; i++) {
         // If found school, append to filteredSchools
-        if (options[i].includes(event.target.value)) {
+        if (options[i].includes(value)) {
           filteredSchools.push(options[i])
         }
       }
@@ -110,11 +110,11 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
           <OptionsWrapper>
             <Option
               onClick={() => {
-                setSelectedOption(event.target.value);
+                setSelectedOption(value);
                 setShowOptions(false);
                 setHasError(false);
               }}>
-                My school is not listed, use {event.target.value}
+                My school is not listed, use {value}
             </Option>
           </OptionsWrapper>
         )
@@ -130,7 +130,7 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
         placeholder={placeholder}
         showOptions={showOptions}
         selectedOption={selectedOption}
-        onClick={() => setShowOptions(!showOptions)}
+        onInput={() => setShowOptions(!showOptions)}
         value={selectedOption}
         error={hasError}
         onChange={(e) => {
@@ -139,7 +139,7 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
       />
 
       {showOptions && (
-        displayPrompt({selectedOption})
+        displayPrompt(selectedOption)
       )}
 
       {!showOptions && hasError && <ErrorMsg>Please enter your school</ErrorMsg>}
