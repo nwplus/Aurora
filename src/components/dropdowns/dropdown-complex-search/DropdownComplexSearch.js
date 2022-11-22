@@ -61,8 +61,13 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
   const [hasError, setHasError] = useState(error);
 
   const displayPrompt = event => {
-    if (event.target.value == 0) {
+    if (!selectedOption) {
       // Render "Start typing to search"
+      return (
+        <OptionsWrapper>
+          <Option>Start typing to search</Option>
+        </OptionsWrapper>
+      )
     }
 
     else {
@@ -100,7 +105,18 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
       }
       else { 
         // Render "My school is not listed, use "event.target.value"
-        //alert("My school is not listed, use " + event.target.value)
+        return (
+          <OptionsWrapper>
+            <Option
+              onClick={() => {
+                setSelectedOption(event.target.value);
+                setShowOptions(false);
+                setHasError(false);
+              }}>
+                My school is not listed, use {event.target.value}
+            </Option>
+          </OptionsWrapper>
+        )
       }
     }
 
@@ -124,7 +140,7 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
             error={hasError}
         />
 
-        {/* {displayPrompt} */}
+        {displayPrompt()}
 
         {/* {showOptions && options.length > 0 && (
           <OptionsWrapper>
