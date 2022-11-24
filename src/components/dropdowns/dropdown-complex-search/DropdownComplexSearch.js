@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import {
   ErrorMsgCSS,
@@ -61,6 +61,12 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
   const [hasError, setHasError] = useState(error);
+
+  useEffect(() => {
+    if (hasError && selectedOption !== '') {
+      setHasError(false);
+    }
+  }, [hasError, selectedOption]);
 
   // Render "Start typing to search"
   const renderStartTypingToSearch = () => {
