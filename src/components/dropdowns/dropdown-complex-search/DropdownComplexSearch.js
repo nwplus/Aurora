@@ -62,62 +62,80 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
   const [selectedOption, setSelectedOption] = useState('');
   const [hasError, setHasError] = useState(error);
 
+  // Render "Start typing to search"
+  const renderStartTypingToSearch = () => {
+    return (
+      <OptionsWrapper>
+        <Option>Start typing to search...</Option>
+      </OptionsWrapper>
+    )
+  }
+
+  // Loop through options to filter schools when typing and renders it
+  const RenderNotListedSchool = (value) => {
+    // Render "My school is not listed, use "event.target.value"
+    return (
+      <OptionsWrapper>
+        <Option
+          onClick={() => {
+            setSelectedOption(value);
+            setShowOptions(false);
+            setHasError(false);
+          }}>
+            My school is not listed, use {value}
+        </Option>
+      </OptionsWrapper>
+    )
+  }
+
+  const renderFilteredSchools = (filteredSchools) => {
+    return (
+      <OptionsWrapper>
+        {filteredSchools.map((option, index) => {
+          return (
+            <Option
+              key={index}
+              onClick={() => {
+                setSelectedOption(option);
+                setShowOptions(false);
+                setHasError(false);
+              }}
+              isLastOption={index === filteredSchools.length - 1}
+            >
+              {option}
+            </Option>
+          );
+        })}
+      </OptionsWrapper>
+    )
+  }
+
+  const filterSchools = (value) => {
+    // Loop through options to filter schools when typing
+    const filteredSchools = []
+    for (let i=0; i < options.length; i++) {
+      // If found school, append to filteredSchools
+      if (options[i].toLowerCase().includes(value.toLowerCase())) {
+        filteredSchools.push(options[i])
+      }
+    }
+
+    return filteredSchools
+  }
+
   const displayPrompt = (value) => {
     if (!value) {
-      // Render "Start typing to search"
-      return (
-        <OptionsWrapper>
-          <Option>Start typing to search...</Option>
-        </OptionsWrapper>
-      )
+      return renderStartTypingToSearch()
     }
 
     else {
       // Loop through options to filter schools when typing
-      const filteredSchools = []
-      for (let i=0; i < options.length; i++) {
-        // If found school, append to filteredSchools
-        if (options[i].includes(value)) {
-          filteredSchools.push(options[i])
-        }
-      }
-
-      if (filteredSchools.length > 0) {
+      if (filterSchools(value).length > 0) {
         // Render items in filteredSchools as options
-        return (
-          <OptionsWrapper>
-            {filteredSchools.map((option, index) => {
-              return (
-                <Option
-                  key={index}
-                  onClick={() => {
-                    setSelectedOption(option);
-                    setShowOptions(false);
-                    setHasError(false);
-                  }}
-                  isLastOption={index === filteredSchools.length - 1}
-                >
-                  {option}
-                </Option>
-              );
-            })}
-          </OptionsWrapper>
-        )
+        return renderFilteredSchools(filterSchools(value))
       }
       else { 
-        // Render "My school is not listed, use "event.target.value"
-        return (
-          <OptionsWrapper>
-            <Option
-              onClick={() => {
-                setSelectedOption(value);
-                setShowOptions(false);
-                setHasError(false);
-              }}>
-                My school is not listed, use {value}
-            </Option>
-          </OptionsWrapper>
-        )
+          return RenderNotListedSchool(value)
       }
     }
   };
@@ -130,12 +148,13 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
         placeholder={placeholder}
         showOptions={showOptions}
         selectedOption={selectedOption}
-        onInput={() => setShowOptions(!showOptions)}
+        onInput={() => setShowOptions(true)}
         value={selectedOption}
         error={hasError}
         onChange={(e) => {
           setSelectedOption(e.target.value);
         }}
+        onClick={() => setShowOptions(true)}
       />
 
       {showOptions && (
