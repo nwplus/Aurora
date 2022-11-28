@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import { colors } from '../../colors/index';
 
 const Radial = ({ active, checked, onClick }) => {
-  const [checked, setChecked] = useState(checked);
+  const [isChecked, setChecked] = useState(checked);
 
   const getBorderColor = (p) => {
     if (!p.active) return `border-color: ${colors.grey600};`;
-    if (checked) return `border-color: ${colors.emerald400};`;
+    if (isChecked) return `border-color: ${colors.emerald400};`;
     return `border-color: white;`;
   };
 
@@ -48,10 +48,10 @@ const Radial = ({ active, checked, onClick }) => {
 
   return (
     <Radial
-      checked={checked}
+      checked={isChecked}
       active={active}
       onClick={() => {
-        setChecked(active ? !checked : false);
+        setChecked(active ? !isChecked : false);
         onClick();
       }}
     />
