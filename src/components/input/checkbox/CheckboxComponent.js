@@ -66,4 +66,4 @@ const CheckboxComponent = ({ disabled, variant, label }) => {
   }
 };
 
-export default CheckboxComponent;
+export { CheckboxComponent };
