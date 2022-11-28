@@ -19,7 +19,7 @@ const Toggle = ({ toggleOn, onChange }) => {
     ${SwitchCSS}
   `;
 
-  const ToggleStyles = (p) => {
+  const ToggleStyles = () => {
     if (checked)
       return ` + ${Switch} {
       background: ${colors.gradientMain};
@@ -31,7 +31,7 @@ const Toggle = ({ toggleOn, onChange }) => {
 
   const Input = styled.input`
     ${InputCSS}
-    ${(p) => ToggleStyles(p)}
+    ${() => ToggleStyles()}
   `;
 
   return (
@@ -45,6 +45,3 @@ const Toggle = ({ toggleOn, onChange }) => {
       <span>Notifications</span>
     </Label>
   );
-};
-
-export { Toggle };

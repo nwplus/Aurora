@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import { colors } from '../../colors/index';
 import {
   DestructiveCSS,
@@ -48,7 +47,7 @@ const Button = ({ active, variant, size, label, onClick }) => {
 
     return styles;
   };
-  const getSizeStyles = (p) => {
+  const getSizeStyles = () => {
     let styles = '';
     switch (size) {
       case 'large':
@@ -65,7 +64,7 @@ const Button = ({ active, variant, size, label, onClick }) => {
   const Button = styled.div`
     ${ButtonCSS}
     ${(p) => getVariantStyles(p)} 
-    ${(p) => getSizeStyles(p)}
+    ${() => getSizeStyles()}
   `;
 
   return (

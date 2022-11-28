@@ -1,5 +1,4 @@
-import { colors } from "../../colors/index";
-import { PrimaryCSS, SecondaryCSS } from "../button/ButtonCSS";
+import { PrimaryCSS, SecondaryCSS } from '../button/ButtonCSS';
 
 export const PillPrimaryCSS = `
     ${PrimaryCSS}
