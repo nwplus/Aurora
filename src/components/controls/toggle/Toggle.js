@@ -8,7 +8,7 @@ const Toggle = ({ toggleOn, onChange }) => {
 
   const handleChange = () => {
     setChecked(!checked);
-    onChange();
+    onChange(!checked);
   };
 
   const Label = styled.label`
@@ -45,3 +45,6 @@ const Toggle = ({ toggleOn, onChange }) => {
       <span>Notifications</span>
     </Label>
   );
+};
+
+export { Toggle };
