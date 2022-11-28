@@ -74,8 +74,8 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
       <OptionsWrapper>
         <Option>Start typing to search...</Option>
       </OptionsWrapper>
-    )
-  }
+    );
+  };
 
   // Loop through options to filter schools when typing and renders it
   const RenderNotListedSchool = (value) => {
@@ -87,12 +87,13 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
             setSelectedOption(value);
             setShowOptions(false);
             setHasError(false);
-          }}>
-            My school is not listed, use {value}
+          }}
+        >
+          My school is not listed, use {value}
         </Option>
       </OptionsWrapper>
-    )
-  }
+    );
+  };
 
   const renderFilteredSchools = (filteredSchools) => {
     return (
@@ -113,35 +114,32 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
           );
         })}
       </OptionsWrapper>
-    )
-  }
+    );
+  };
 
   const filterSchools = (value) => {
     // Loop through options to filter schools when typing
-    const filteredSchools = []
-    for (let i=0; i < options.length; i++) {
+    const filteredSchools = [];
+    for (let i = 0; i < options.length; i++) {
       // If found school, append to filteredSchools
       if (options[i].toLowerCase().includes(value.toLowerCase())) {
-        filteredSchools.push(options[i])
+        filteredSchools.push(options[i]);
       }
     }
 
-    return filteredSchools
-  }
+    return filteredSchools;
+  };
 
   const displayPrompt = (value) => {
     if (!value) {
-      return renderStartTypingToSearch()
-    }
-
-    else {
+      return renderStartTypingToSearch();
+    } else {
       // Loop through options to filter schools when typing
       if (filterSchools(value).length > 0) {
         // Render items in filteredSchools as options
-        return renderFilteredSchools(filterSchools(value))
-      }
-      else { 
-          return RenderNotListedSchool(value)
+        return renderFilteredSchools(filterSchools(value));
+      } else {
+        return RenderNotListedSchool(value);
       }
     }
   };
@@ -163,11 +161,11 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
         onClick={() => setShowOptions(true)}
       />
 
-      {showOptions && (
-        displayPrompt(selectedOption)
-      )}
+      {showOptions && displayPrompt(selectedOption)}
 
-      {!showOptions && hasError && <ErrorMsg>Please enter your school</ErrorMsg>}
+      {!showOptions && hasError && (
+        <ErrorMsg>Please enter your school</ErrorMsg>
+      )}
     </Wrapper>
   );
 };
