@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { Button } from "./Button";
+import { Button } from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Example/Button/Button",
+  title: 'Example/Button/Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -12,9 +12,9 @@ export default {
       description: 'is component active',
       options: [true, false],
       control: {
-        type: 'boolean'
-      }
-    }
+        type: 'boolean',
+      },
+    },
   },
 };
 
@@ -24,50 +24,54 @@ const Template = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  variant: "primary",
+  variant: 'primary',
   active: true,
-  label: "Button",
-  name: "Primary",
-  size: "small",
+  label: 'Button',
+  name: 'Primary',
+  size: 'small',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  variant: "secondary",
+  variant: 'secondary',
   active: true,
-  label: "Button",
-  name: "Secondary",
-  size: "small",
+  label: 'Button',
+  name: 'Secondary',
+  size: 'small',
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: 'large',
   label: 'Button',
-  name: 'Large'
+  name: 'Large',
+  variant: 'secondary',
+  active: true,
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: 'small',
   label: 'Button',
-  name: 'Small'
+  name: 'Small',
+  variant: 'secondary',
+  active: true,
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
-  variant: "outline",
+  variant: 'outline',
   active: true,
   size: 'large',
   label: 'Button',
-  name: 'Outline'
+  name: 'Outline',
 };
 
 export const Destructive = Template.bind({});
 Destructive.args = {
-  variant: "destructive",
+  variant: 'destructive',
   active: true,
   size: 'large',
   label: 'Button',
-  name: 'Destructive'
-}; 
+  name: 'Destructive',
+};

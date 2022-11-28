@@ -1,16 +1,16 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { colors } from "../../colors/index";
+import { colors } from '../../colors/index';
 import {
   DestructiveCSS,
   ButtonCSS,
   OutlineCSS,
   PrimaryCSS,
   SecondaryCSS,
-} from "./ButtonCSS";
+} from './ButtonCSS';
 
 // Button
-const Button = (props) => {
+const Button = ({ active, variant, size, label }) => {
   const getVariantStyles = (p) => {
     // Inactive button variant background state (primary, secondary, destructive)
     const inactiveSolid = `background: ${colors.grey500}; color: ${colors.grey600}; cursor: default;`;
@@ -18,43 +18,28 @@ const Button = (props) => {
     // Inactive outlined variant background state
     const inactiveOutlined = `background: Transparent; color: ${colors.grey600}; outline: 2px solid ${colors.grey600}; padding: 0.7rem 1.5rem;`;
 
-    let styles = "";
+    let styles = '';
 
     switch (p.variant) {
-      case "primary":
+      case 'primary':
         styles += p.active
-          ? `
-                  ${PrimaryCSS}
-                   &::before {
-                        content: "${p.children}";
-                    }
-
-                `
+          ? `${PrimaryCSS}
+          &::before {
+               content: "${p.children}";
+           }`
           : inactiveSolid;
         break;
 
-      case "secondary":
-        styles += p.active
-          ? `
-                    ${SecondaryCSS}
-                `
-          : inactiveSolid;
+      case 'secondary':
+        styles += p.active ? `${SecondaryCSS}` : inactiveSolid;
         break;
 
-      case "outline":
-        styles += p.active
-          ? `
-                    ${OutlineCSS}
-             `
-          : inactiveOutlined;
+      case 'outline':
+        styles += p.active ? `${OutlineCSS}` : inactiveOutlined;
         break;
 
-      case "destructive":
-        styles += p.active
-          ? `
-                    ${DestructiveCSS}
-                `
-          : inactiveSolid;
+      case 'destructive':
+        styles += active ? `${DestructiveCSS}` : inactiveSolid;
         break;
 
       default:
@@ -64,16 +49,14 @@ const Button = (props) => {
     return styles;
   };
   const getSizeStyles = (p) => {
-    let styles = "";
-    switch (p.size) {
-      case "large":
-        styles += "font-size: 1.5rem; padding: 0.8rem 1.5rem;";
+    let styles = '';
+    switch (size) {
+      case 'large':
+        styles += 'font-size: 1.5rem; padding: 0.8rem 1.5rem;';
         break;
-      case "small":
-        styles += "font-size: 1.125rem; padding: 0.8rem 1.125rem;";
-        break;
+      // default is small
       default:
-        styles += "font-size: 1.125rem; padding: 0.8rem 1.125rem;";
+        styles += 'font-size: 1.125rem; padding: 0.8rem 1.125rem;';
         break;
     }
     return styles;
@@ -86,8 +69,8 @@ const Button = (props) => {
   `;
 
   return (
-    <Button active={props.active} variant={props.variant} size={props.size}>
-      {props.label}
+    <Button active={active} variant={variant} size={size}>
+      {label}
     </Button>
   );
 };
