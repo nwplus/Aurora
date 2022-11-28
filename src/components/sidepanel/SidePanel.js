@@ -1,10 +1,10 @@
-import { SidePanelCSS } from "./SidePanelCSS";
-import { colors } from "../colors/Colors";
-import styled from "styled-components"
+import { SidePanelCSS } from './SidePanelCSS';
+import { colors } from '../colors/Colors';
+import styled from 'styled-components';
 
 const SidePanel = ({ active, label }) => {
   const inactive = `color: ${colors.grey500}; pointer-events: none`;
-  let styles = "";
+  let styles = '';
 
   if (active) {
     styles += `${SidePanelCSS}`;
@@ -13,15 +13,11 @@ const SidePanel = ({ active, label }) => {
   }
 
   const SidePanel = styled.div`
-	  ${SidePanelCSS}
+    ${SidePanelCSS}
     ${styles}
-`;
+  `;
 
-  return (
-    <SidePanel active={styles}>
-      {label}
-    </SidePanel>
-  );
+  return <SidePanel active={styles}>{label}</SidePanel>;
 };
 
 export { SidePanel };
