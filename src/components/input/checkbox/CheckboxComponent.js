@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Checkbox, FormControlLabel } from '@mui/material';
 import { colors } from '../../colors/Colors';
 
-const CheckboxComponent = ({ disabled, variant, label }) => {
+const CheckboxComponent = ({ disabled, variant, label, onClick }) => {
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
@@ -39,7 +39,10 @@ const CheckboxComponent = ({ disabled, variant, label }) => {
                 },
               }}
               disabled={disabled}
-              onClick={() => setChecked(!checked)}
+              onClick={() => {
+                setChecked(!checked);
+                onClick(!checked);
+              }}
             />
           }
         />

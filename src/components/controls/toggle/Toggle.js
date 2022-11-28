@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { colors } from "../../colors";
-import { InputCSS, LabelCSS, SwitchCSS } from "./ToggleCSS";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { colors } from '../../colors';
+import { InputCSS, LabelCSS, SwitchCSS } from './ToggleCSS';
 
-const Toggle = ({ toggleOn }) => {
+const Toggle = ({ toggleOn, onChange }) => {
   const [checked, setChecked] = useState(toggleOn);
 
   const handleChange = () => {
     setChecked(!checked);
+    onChange();
   };
 
   const Label = styled.label`
@@ -36,7 +37,7 @@ const Toggle = ({ toggleOn }) => {
   return (
     <Label>
       <Input
-        type="checkbox"
+        type='checkbox'
         checked={checked}
         onChange={() => handleChange(checked)}
       />

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { colors } from '../../colors/index';
 
-const Radial = ({ active, checked }) => {
+const Radial = ({ active, checked, onClick }) => {
   const [checked, setChecked] = useState(checked);
 
   const getBorderColor = (p) => {
@@ -50,8 +50,11 @@ const Radial = ({ active, checked }) => {
     <Radial
       checked={checked}
       active={active}
-      onClick={() => setChecked(active ? !checked : false)}
-    ></Radial>
+      onClick={() => {
+        setChecked(active ? !checked : false);
+        onClick();
+      }}
+    />
   );
 };
 

@@ -10,7 +10,7 @@ import {
 } from './ButtonCSS';
 
 // Button
-const Button = ({ active, variant, size, label }) => {
+const Button = ({ active, variant, size, label, onClick }) => {
   const getVariantStyles = (p) => {
     // Inactive button variant background state (primary, secondary, destructive)
     const inactiveSolid = `background: ${colors.grey500}; color: ${colors.grey600}; cursor: default;`;
@@ -69,7 +69,7 @@ const Button = ({ active, variant, size, label }) => {
   `;
 
   return (
-    <Button active={active} variant={variant} size={size}>
+    <Button active={active} variant={variant} size={size} onClick={onClick}>
       {label}
     </Button>
   );

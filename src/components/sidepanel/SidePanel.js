@@ -2,7 +2,7 @@ import { SidePanelCSS } from './SidePanelCSS';
 import { colors } from '../colors/Colors';
 import styled from 'styled-components';
 
-const SidePanel = ({ active, label }) => {
+const SidePanel = ({ active, label, onClick }) => {
   const inactive = `color: ${colors.grey500}; pointer-events: none`;
   let styles = '';
 
@@ -17,7 +17,11 @@ const SidePanel = ({ active, label }) => {
     ${styles}
   `;
 
-  return <SidePanel active={styles}>{label}</SidePanel>;
+  return (
+    <SidePanel onClick={onClick} active={styles}>
+      {label}
+    </SidePanel>
+  );
 };
 
 export { SidePanel };

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colors } from '../../colors/Colors';
 import { ButtonNavigationCSS } from './ButtonNavigationCSS';
 
-const ButtonNavigation = ({ active, variant, label }) => {
+const ButtonNavigation = ({ active, variant, label, onClick }) => {
   const getActiveStyles = (p) => {
     const inactiveText = `color: ${colors.grey600}; pointer-events: none`;
     let styles = '';
@@ -22,7 +22,7 @@ const ButtonNavigation = ({ active, variant, label }) => {
   `;
 
   return (
-    <ButtonNavigation active={active} variant={variant}>
+    <ButtonNavigation active={active} variant={variant} onClick={onClick}>
       {label}
     </ButtonNavigation>
   );
