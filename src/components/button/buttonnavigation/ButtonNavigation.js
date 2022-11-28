@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import { colors } from "../../colors/Colors";
-import { ButtonNavigationCSS } from "./ButtonNavigationCSS";
+import styled from 'styled-components';
+import { colors } from '../../colors/Colors';
+import { ButtonNavigationCSS } from './ButtonNavigationCSS';
 
-const ButtonNavigation = (props) => {
+const ButtonNavigation = ({ active, variant, label }) => {
   const getActiveStyles = (p) => {
     const inactiveText = `color: ${colors.grey600}; pointer-events: none`;
-    let styles = "";
+    let styles = '';
 
     if (p.active) {
       styles += `${ButtonNavigationCSS}`;
@@ -22,8 +22,8 @@ const ButtonNavigation = (props) => {
   `;
 
   return (
-    <ButtonNavigation active={props.active} variant={props.variant}>
-      {props.label}
+    <ButtonNavigation active={active} variant={variant}>
+      {label}
     </ButtonNavigation>
   );
 };
