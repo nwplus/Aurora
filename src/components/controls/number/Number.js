@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { UnfilledContainerCSS, FilledContainerCSS } from "./NumberCSS";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { UnfilledContainerCSS, FilledContainerCSS } from './NumberCSS';
 
 const Number = ({ isSelected, number }) => {
   const [isFilled, setIsFilled] = useState(isSelected);

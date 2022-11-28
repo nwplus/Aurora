@@ -1,34 +1,28 @@
-import styled from "styled-components";
-import { colors } from "../../colors/index";
+import styled from 'styled-components';
+import { colors } from '../../colors/index';
 import {
   PillButtonCSS,
   PillPrimaryCSS,
   PillSecondaryCSS,
-} from "./PillButtonCSS";
+} from './PillButtonCSS';
 
-const PillButton = (props) => {
+const PillButton = ({ active, variant, label }) => {
   const getVariantStyles = (p) => {
     const inactiveSolid = `background: ${colors.grey500}; color: ${colors.grey600}; cursor: default; border-radius: 100px;`;
-    let styles = "";
+    let styles = '';
 
     switch (p.variant) {
-      case "primary":
+      case 'primary':
         styles += p.active
-          ? `
-                    ${PillPrimaryCSS}
-                    &::before {
-                        content: "${p.children}";
-                    }
-                `
+          ? `${PillPrimaryCSS}
+               &::before {
+                  content: "${p.children}";
+                }`
           : inactiveSolid;
         break;
 
-      case "secondary":
-        styles += p.active
-          ? `
-                    ${PillSecondaryCSS}
-                `
-          : inactiveSolid;
+      case 'secondary':
+        styles += p.active ? `${PillSecondaryCSS}` : inactiveSolid;
         break;
 
       default:
@@ -44,8 +38,8 @@ const PillButton = (props) => {
   `;
 
   return (
-    <PillButton active={props.active} variant={props.variant}>
-      {props.label}
+    <PillButton active={active} variant={variant}>
+      {label}
     </PillButton>
   );
 };

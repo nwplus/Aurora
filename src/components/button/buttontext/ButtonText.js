@@ -1,35 +1,26 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { colors } from "../../colors/index";
+import { colors } from '../../colors/index';
 import {
   ButtonTextCSS,
   PrimaryButtonTextCSS,
   SecondaryButtonTextCSS,
-} from "./ButtonTextCSS";
+} from './ButtonTextCSS';
 
 // ButtonText
-const ButtonText = (props) => {
+const ButtonText = ({ active, variant, label }) => {
   const getVariantStyles = (p) => {
-    const inactiveText = `color: ${colors.grey600};
-                          cursor: default`;
+    const inactiveText = `color: ${colors.grey600}; cursor: default`;
 
-    let styles = "";
+    let styles = '';
 
     switch (p.variant) {
-      case "primary":
-        styles += p.active
-          ? `
-                    ${PrimaryButtonTextCSS}
-                `
-          : inactiveText;
+      case 'primary':
+        styles += p.active ? `${PrimaryButtonTextCSS}` : inactiveText;
         break;
 
-      case "secondary":
-        styles += p.active
-          ? `
-                    ${SecondaryButtonTextCSS}
-                `
-          : inactiveText;
+      case 'secondary':
+        styles += p.active ? `${SecondaryButtonTextCSS}` : inactiveText;
         break;
 
       default:
@@ -45,8 +36,8 @@ const ButtonText = (props) => {
   `;
 
   return (
-    <ButtonText active={props.active} variant={props.variant}>
-      {props.label}
+    <ButtonText active={active} variant={variant}>
+      {label}
     </ButtonText>
   );
 };
