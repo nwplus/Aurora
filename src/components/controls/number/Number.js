@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { UnfilledContainerCSS, FilledContainerCSS } from './NumberCSS';
 
-const Number = ({ isSelected, number }) => {
+const Number = ({ isSelected, number, onClick }) => {
   const [isFilled, setIsFilled] = useState(isSelected);
 
   const handleChange = () => {
     setIsFilled(!isFilled);
+    onClick();
   };
 
   const UnfilledContainer = styled.div`

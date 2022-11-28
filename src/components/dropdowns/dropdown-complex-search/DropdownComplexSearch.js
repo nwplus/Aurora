@@ -57,7 +57,12 @@ const ErrorMsg = styled.div`
   ${ErrorMsgCSS}
 `;
 
-const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
+const DropdownComplexSearchComponent = ({
+  placeholder,
+  options,
+  error,
+  onChange,
+}) => {
   const [showOptions, setShowOptions] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
   const [hasError, setHasError] = useState(error);
@@ -157,6 +162,7 @@ const DropdownComplexSearchComponent = ({ placeholder, options, error }) => {
         error={hasError}
         onChange={(e) => {
           setSelectedOption(e.target.value);
+          onChange(e);
         }}
         onClick={() => setShowOptions(true)}
       />

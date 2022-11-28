@@ -8,7 +8,7 @@ import {
 } from './ButtonTextCSS';
 
 // ButtonText
-const ButtonText = ({ active, variant, label }) => {
+const ButtonText = ({ active, variant, label, onClick }) => {
   const getVariantStyles = (p) => {
     const inactiveText = `color: ${colors.grey600}; cursor: default`;
 
@@ -36,7 +36,7 @@ const ButtonText = ({ active, variant, label }) => {
   `;
 
   return (
-    <ButtonText active={active} variant={variant}>
+    <ButtonText active={active} variant={variant} onClick={onClick}>
       {label}
     </ButtonText>
   );

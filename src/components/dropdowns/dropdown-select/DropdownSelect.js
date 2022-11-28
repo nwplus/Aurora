@@ -54,7 +54,7 @@ const Image = styled.img`
     (!selectedOption && !showOptions) || hasError ? 'saturate(0)' : ''};
 `;
 
-const DropdownSelectComponent = ({ placeholder, options, error }) => {
+const DropdownSelectComponent = ({ placeholder, options, error, onClick }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const [hasError, setHasError] = useState(error);
@@ -88,6 +88,7 @@ const DropdownSelectComponent = ({ placeholder, options, error }) => {
                   setSelectedOption(option);
                   setShowOptions(false);
                   setHasError(false);
+                  onClick(option);
                 }}
                 isLastOption={index === options.length - 1}
               >

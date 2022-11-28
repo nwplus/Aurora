@@ -6,7 +6,7 @@ import {
   PillSecondaryCSS,
 } from './PillButtonCSS';
 
-const PillButton = ({ active, variant, label }) => {
+const PillButton = ({ active, variant, label, onClick }) => {
   const getVariantStyles = (p) => {
     const inactiveSolid = `background: ${colors.grey500}; color: ${colors.grey600}; cursor: default; border-radius: 100px;`;
     let styles = '';
@@ -38,7 +38,7 @@ const PillButton = ({ active, variant, label }) => {
   `;
 
   return (
-    <PillButton active={active} variant={variant}>
+    <PillButton active={active} variant={variant} onClick={onClick}>
       {label}
     </PillButton>
   );

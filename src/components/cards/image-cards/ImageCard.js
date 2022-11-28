@@ -1,15 +1,20 @@
-import styled from "styled-components";
-import { colors } from "../../colors/Colors";
-import Button from "./ImageCardButton";
+import styled from 'styled-components';
+import { colors } from '../../colors/Colors';
+import Button from './ImageCardButton';
 
 const BackgroundImageContainer = styled.div`
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 47.69%, rgba(0, 0, 0, 0.8) 100%), url(${(p) => p.imageLink}) center/cover;
-  background: ${(p) => !p.active && `linear-gradient(180deg, rgba(0, 0, 0, 0.3) 47.69%, rgba(0, 0, 0, 0.8) 82.29%), url(${p.imageLink}) center/cover`};
-`
- ;
-
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 47.69%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url(${(p) => p.imageLink}) center/cover;
+  background: ${(p) =>
+    !p.active &&
+    `linear-gradient(180deg, rgba(0, 0, 0, 0.3) 47.69%, rgba(0, 0, 0, 0.8) 82.29%), url(${p.imageLink}) center/cover`};
+`;
 const CardContainer = styled.div`
   width: 450px;
   height: 500px;
@@ -48,7 +53,7 @@ const EventDataContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 1.2em;
-  font-family: "HK Grotesk", sans-serif;
+  font-family: 'HK Grotesk', sans-serif;
   font-weight: 700;
 `;
 
@@ -77,26 +82,26 @@ const EventDateString = styled.div`
 
 const ImageCardComponent = ({ active, link, date, imageLink }) => {
   return (
-    <CardContainer imageLink={imageLink} >
+    <CardContainer imageLink={imageLink}>
       <OverlayContainer>
         <OverLayFooterContainer>
           <EventDataContainer>
             <EventRegistrationStatus active={active}>
-              {`Registration ${active ? "Open" : "Closed"}`}
+              {`Registration ${active ? 'Open' : 'Closed'}`}
             </EventRegistrationStatus>
             <EventDateString>{date}</EventDateString>
           </EventDataContainer>
           <Button
-            height="3em"
+            height='3em'
             link={link}
-            target="_blank"
-            rel="noopener noreferrer"
+            target='_blank'
+            rel='noopener noreferrer'
           >
             Visit Site
           </Button>
         </OverLayFooterContainer>
       </OverlayContainer>
-      <BackgroundImageContainer imageLink={imageLink} active={active}/>
+      <BackgroundImageContainer imageLink={imageLink} active={active} />
     </CardContainer>
   );
 };

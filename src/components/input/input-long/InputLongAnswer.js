@@ -37,12 +37,13 @@ const ErrorMessage = styled.span`
   ${ErrorMessageCSS}
 `;
 
-const InputLongAnswerComponent = ({ isEmpty }) => {
+const InputLongAnswerComponent = ({ isEmpty, onChange }) => {
   const [text, setText] = useState('');
   const [errorText, setErrorText] = useState('');
 
   const changeHandler = (e) => {
     setText(e.target.value);
+    onChange(e);
   };
 
   useEffect(() => {

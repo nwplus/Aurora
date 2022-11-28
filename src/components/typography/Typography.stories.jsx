@@ -1,24 +1,29 @@
-import React from "react";
-
-import { H1, H2, H3, H4 } from "./Typography";
+import React from 'react';
 
 import {
-  HeadingMain,
-  FontCaption,
+  H1,
+  H2,
+  H3,
+  H4,
+  Paragraph,
   HeadingCaption,
   BodyTitle,
   BodyCaption,
+  HeadingMain,
+  BoldFontCaption,
+  H1Caption,
+  FontCaption,
+} from './Typography';
+
+import {
   BodyContainer,
-  Paragraph,
   TypographyPageContainer,
   TypographyContainer,
-  SameFontCaption,
-  H1Caption,
-} from "./TypographyInternal";
+} from './TypographyInternal';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Typography",
+  title: 'Typography',
 };
 
 const Template = () => (
@@ -26,7 +31,7 @@ const Template = () => (
     <TypographyContainer>
       <HeadingMain>Aa</HeadingMain>
       <FontCaption>HK Grotesk</FontCaption>
-      <SameFontCaption>"It's the same font!"</SameFontCaption>
+      <BoldFontCaption>"It's the same font!"</BoldFontCaption>
     </TypographyContainer>
     <TypographyContainer>
       <H1Caption>Weight/Size/Leading/Tracking</H1Caption>
