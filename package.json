@@ -1,7 +1,8 @@
 {
   "name": "@nwplus/aurora",
   "description": "Bringing beautiful UI components ready for production",
-  "version": "0.1.1",
+  "version": "0.1.0",
+  "private": false,
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@emotion/react": "^11.10.4",
@@ -19,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/components --out-dir dist --copy-files",
+    "build": "rm -rf dist && NODE_ENV=production babel src --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
@@ -69,6 +70,7 @@
     "@storybook/node-logger": "^6.4.17",
     "@storybook/preset-create-react-app": "^4.0.0",
     "@storybook/react": "^6.4.17",
+    "babel-plugin-inline-react-svg": "^2.0.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.28.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -76,7 +78,7 @@
     "styled-components": "^5.3.3",
     "webpack": "^5.68.0"
   },
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "files": [
     "dist",
     "README.md"

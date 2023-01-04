@@ -39,5 +39,5 @@ To publish to npm (login required)
 Resources
 
 - Storybook: https://storybook.js.org/
-- publishing to npm: https://fathomtech.io/blog/create-a-react-component-library-using-create-react-app/
+- publishing to npm: https://levelup.gitconnected.com/publish-react-components-as-an-npm-package-7a671a2fb7f
 - svg icon preview VSCode Plugin: simonsiefke.svg-preview
