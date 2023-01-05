@@ -1,6 +1,6 @@
-import React from 'react';
-import { useState } from 'react';
-import styled from 'styled-components';
+import React from "react";
+import { useState } from "react";
+import styled from "styled-components";
 import {
   ErrorMsgCSS,
   ImageCSS,
@@ -8,9 +8,9 @@ import {
   OptionCSS,
   OptionsWrapperCSS,
   WrapperCSS,
-} from './DropdownSelectCSS';
-import { colors } from '../../colors';
-import { CaretLeft, CaretDown } from '../../../assets/icons';
+} from "./DropdownSelectCSS";
+import { colors } from "../../colors";
+import { CaretLeft, CaretDown } from "../../../assets/icons";
 
 const Wrapper = styled.div`
   ${WrapperCSS};
@@ -21,16 +21,16 @@ ${InputCSS}
 
   border-radius: ${({ showOptions }) => (showOptions ? `7px 7px 0 0 ` : `7px`)};
   border: ${({ showOptions }) =>
-    showOptions ? `2px solid ${colors.emerald400}` : ' 2px solid white'};
+    showOptions ? `2px solid ${colors.emerald400}` : " 2px solid white"};
   color: ${({ selectedOption }) =>
-    selectedOption ? `${colors.emerald400}` : 'white'};
+    selectedOption ? `${colors.emerald400}` : "white"};
 
   &:hover {
 	color: ${({ error }) => (error ? `white` : ` ${colors.emerald400}`)}
     border: 2px solid ${colors.emerald400};
   }
 
-  border: ${({ error }) => (error ? `2px solid ${colors.red500}` : '')};
+  border: ${({ error }) => (error ? `2px solid ${colors.red500}` : "")};
 `;
 
 const OptionsWrapper = styled.div`
@@ -39,8 +39,8 @@ const OptionsWrapper = styled.div`
 
 const Option = styled.div`
   ${OptionCSS}
-  border-radius: ${({ isLastOption }) => (isLastOption ? '0 0 6px 6px' : '')};
-  margin-bottom: ${({ isLastOption }) => (isLastOption ? '-1px' : '')};
+  border-radius: ${({ isLastOption }) => (isLastOption ? "0 0 6px 6px" : "")};
+  margin-bottom: ${({ isLastOption }) => (isLastOption ? "-1px" : "")};
 `;
 
 const ErrorMsg = styled.div`
@@ -49,9 +49,9 @@ const ErrorMsg = styled.div`
 
 const Image = styled.img`
   ${ImageCSS}
-  top: ${({ showOptions }) => (showOptions ? '18px' : '21px')};
+  top: ${({ showOptions }) => (showOptions ? "18px" : "21px")};
   filter: ${({ selectedOption, hasError, showOptions }) =>
-    (!selectedOption && !showOptions) || hasError ? 'saturate(0)' : ''};
+    (!selectedOption && !showOptions) || hasError ? "saturate(0)" : ""};
 `;
 
 const DropdownSelectComponent = ({ placeholder, options, error, onClick }) => {
@@ -72,7 +72,7 @@ const DropdownSelectComponent = ({ placeholder, options, error, onClick }) => {
       />
       <Image
         src={showOptions ? CaretLeft : CaretDown}
-        alt='Caret left'
+        alt="Caret left"
         showOptions={showOptions}
         hasError={hasError}
         selectedOption={selectedOption}
@@ -103,4 +103,4 @@ const DropdownSelectComponent = ({ placeholder, options, error, onClick }) => {
   );
 };
 
-export default DropdownSelectComponent;
+export { DropdownSelectComponent };

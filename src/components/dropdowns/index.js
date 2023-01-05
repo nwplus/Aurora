@@ -1,5 +1,5 @@
-export * from './dropdowns';
+export * from "./dropdown";
 
-export * from './dropdown-select';
+export * from "./dropdown-select";
 
-export * from './dropdown-complex-search';
+export * from "./dropdown-complex-search";

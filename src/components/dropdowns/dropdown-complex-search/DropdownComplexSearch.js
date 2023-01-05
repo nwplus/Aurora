@@ -1,16 +1,16 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React from "react";
+import { useState, useEffect } from "react";
+import styled from "styled-components";
 import {
   ErrorMsgCSS,
   OptionCSS,
   OptionsWrapperCSS,
   WrapperCSS,
   InputCSS,
-} from './DropdownComplexSearchCSS';
-import { colors } from '../../colors';
+} from "./DropdownComplexSearchCSS";
+import { colors } from "../../colors";
 
-import { Search } from '../../../assets/icons';
+import { Search } from "../../../assets/icons";
 
 const Wrapper = styled.div`
   ${WrapperCSS};
@@ -39,7 +39,7 @@ const Input = styled.input`
     border: 2px solid ${colors.emerald400};
   }
 
-  border: ${({ error }) => (error ? `2px solid ${colors.red500}` : '')};
+  border: ${({ error }) => (error ? `2px solid ${colors.red500}` : "")};
 `;
 
 const OptionsWrapper = styled.div`
@@ -49,8 +49,8 @@ const OptionsWrapper = styled.div`
 const Option = styled.div`
   ${OptionCSS}
   width: 320px;
-  border-radius: ${({ isLastOption }) => (isLastOption ? '0 0 6px 6px' : '')};
-  margin-bottom: ${({ isLastOption }) => (isLastOption ? '-1px' : '')};
+  border-radius: ${({ isLastOption }) => (isLastOption ? "0 0 6px 6px" : "")};
+  margin-bottom: ${({ isLastOption }) => (isLastOption ? "-1px" : "")};
 `;
 
 const ErrorMsg = styled.div`
@@ -64,11 +64,11 @@ const DropdownComplexSearchComponent = ({
   onChange,
 }) => {
   const [showOptions, setShowOptions] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOption, setSelectedOption] = useState("");
   const [hasError, setHasError] = useState(error);
 
   useEffect(() => {
-    if (hasError && selectedOption !== '') {
+    if (hasError && selectedOption !== "") {
       setHasError(false);
     }
   }, [hasError, selectedOption]);
@@ -151,7 +151,7 @@ const DropdownComplexSearchComponent = ({
 
   return (
     <Wrapper>
-      <Image src={Search} alt='Search icon' />
+      <Image src={Search} alt="Search icon" />
 
       <Input
         placeholder={placeholder}
@@ -176,4 +176,4 @@ const DropdownComplexSearchComponent = ({
   );
 };
 
-export default DropdownComplexSearchComponent;
+export { DropdownComplexSearchComponent };
