@@ -26,8 +26,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "clean": "rimraf dist",
-    "compile": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
-    "lint": "eslint '**/*.js'"
+    "compile": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
   },
   "eslintConfig": {
     "extends": [
@@ -72,9 +71,6 @@
     "@storybook/react": "^6.4.17",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.28.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.11",
     "styled-components": "^5.3.3",
     "webpack": "^5.68.0"
   },
