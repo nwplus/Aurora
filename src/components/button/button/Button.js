@@ -1,12 +1,13 @@
-import styled from 'styled-components';
-import { colors } from '../../colors/index';
+import React from "react";
+import styled from "styled-components";
+import { colors } from "../../colors/index";
 import {
   DestructiveCSS,
   ButtonCSS,
   OutlineCSS,
   PrimaryCSS,
   SecondaryCSS,
-} from './ButtonCSS';
+} from "./ButtonCSS";
 
 // Button
 const Button = ({ active, variant, size, label, onClick }) => {
@@ -17,10 +18,10 @@ const Button = ({ active, variant, size, label, onClick }) => {
     // Inactive outlined variant background state
     const inactiveOutlined = `background: Transparent; color: ${colors.grey600}; outline: 2px solid ${colors.grey600}; padding: 0.7rem 1.5rem;`;
 
-    let styles = '';
+    let styles = "";
 
     switch (p.variant) {
-      case 'primary':
+      case "primary":
         styles += p.active
           ? `${PrimaryCSS}
           &::before {
@@ -29,15 +30,15 @@ const Button = ({ active, variant, size, label, onClick }) => {
           : inactiveSolid;
         break;
 
-      case 'secondary':
+      case "secondary":
         styles += p.active ? `${SecondaryCSS}` : inactiveSolid;
         break;
 
-      case 'outline':
+      case "outline":
         styles += p.active ? `${OutlineCSS}` : inactiveOutlined;
         break;
 
-      case 'destructive':
+      case "destructive":
         styles += active ? `${DestructiveCSS}` : inactiveSolid;
         break;
 
@@ -48,14 +49,14 @@ const Button = ({ active, variant, size, label, onClick }) => {
     return styles;
   };
   const getSizeStyles = () => {
-    let styles = '';
+    let styles = "";
     switch (size) {
-      case 'large':
-        styles += 'font-size: 1.5rem; padding: 0.8rem 1.5rem;';
+      case "large":
+        styles += "font-size: 1.5rem; padding: 0.8rem 1.5rem;";
         break;
       // default is small
       default:
-        styles += 'font-size: 1.125rem; padding: 0.8rem 1.125rem;';
+        styles += "font-size: 1.125rem; padding: 0.8rem 1.125rem;";
         break;
     }
     return styles;

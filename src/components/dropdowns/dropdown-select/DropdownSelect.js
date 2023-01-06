@@ -56,7 +56,7 @@ const Image = styled.img`
 
 const DropdownSelectComponent = ({ placeholder, options, error, onClick }) => {
   const [showOptions, setShowOptions] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState("");
   const [hasError, setHasError] = useState(error);
 
   return (

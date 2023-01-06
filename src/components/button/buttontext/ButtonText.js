@@ -1,25 +1,26 @@
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { colors } from '../../colors/index';
+import { colors } from "../../colors/index";
 import {
   ButtonTextCSS,
   PrimaryButtonTextCSS,
   SecondaryButtonTextCSS,
-} from './ButtonTextCSS';
+} from "./ButtonTextCSS";
 
 // ButtonText
 const ButtonText = ({ active, variant, label, onClick }) => {
   const getVariantStyles = (p) => {
     const inactiveText = `color: ${colors.grey600}; cursor: default`;
 
-    let styles = '';
+    let styles = "";
 
     switch (p.variant) {
-      case 'primary':
+      case "primary":
         styles += p.active ? `${PrimaryButtonTextCSS}` : inactiveText;
         break;
 
-      case 'secondary':
+      case "secondary":
         styles += p.active ? `${SecondaryButtonTextCSS}` : inactiveText;
         break;
 

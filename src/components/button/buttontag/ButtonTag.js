@@ -1,12 +1,13 @@
-import styled from 'styled-components';
-import { colors } from '../../colors/index';
+import React from "react";
+import styled from "styled-components";
+import { colors } from "../../colors/index";
 import {
   FocusCSS,
   ButtonTagCSS,
   InactiveCSS,
   ActiveCSS,
   HoverCSS,
-} from './ButtonTagCSS';
+} from "./ButtonTagCSS";
 
 // ButtonTag
 const ButtonTag = ({ label, disabled, onClick }) => {
@@ -29,7 +30,7 @@ const ButtonTag = ({ label, disabled, onClick }) => {
           background: ${colors.midnight600};
       }`}
     
-    ${disabled ? InactiveCSS : ''}
+    ${disabled ? InactiveCSS : ""}
   `;
 
   const Circle = styled.div`
@@ -45,7 +46,7 @@ const ButtonTag = ({ label, disabled, onClick }) => {
         &:focus {
           border: 2px solid ${colors.midnight400};
         }`}
-    ${disabled ? `border: 2px solid ${colors.grey500};` : ''}
+    ${disabled ? `border: 2px solid ${colors.grey500};` : ""}
     border-radius: 20px;
     transition: all 0.13s linear;
   `;
