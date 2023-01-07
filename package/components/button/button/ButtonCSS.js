@@ -1,0 +1,17 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SecondaryCSS = exports.PrimaryCSS = exports.OutlineCSS = exports.DestructiveCSS = exports.ButtonCSS = void 0;
+var _index = require("../../colors/index");
+const PrimaryCSS = "\n    background: ".concat(_index.colors.gradientMain, "; \n    color: ").concat(_index.colors.midnight600, ";\n\n    &::before {\n        display:flex;\n        align-items:center;\n        justify-content:center;\n        color: ").concat(_index.colors.teal600, ";\n\n        position: absolute;\n        top: 0;\n        right: 0;\n        bottom: 0;\n        left: 0;\n\n        z-index: 1;\n        transition: opacity 0.25s ease-in-out;\n        opacity: 0;\n\n        background: ").concat(_index.colors.gradientMainLight, "; ;\n    }\n\n    &:hover::before {\n        opacity: 1;\n    }\n\n    &:active {\n        transform: scale(0.97);\n    }\n");
+exports.PrimaryCSS = PrimaryCSS;
+const SecondaryCSS = "\n    background: ".concat(_index.colors.white, ";\n                        \n    &:hover {\n        background: ").concat(_index.colors.grey200, ";\n    }\n\n    &:active {\n        transform: scale(0.97);\n    }\n");
+exports.SecondaryCSS = SecondaryCSS;
+const OutlineCSS = "\n    font-family: \"HK Grotesk\", sans-serif;\n    font-weight: 700;\n    background-color: transparent;\n    color: ".concat(_index.colors.emerald400, ";\n    display: inline-block;\n    border-radius: 8px;\n    text-align: center;\n\n    transition: 0.3s;\n    cursor: pointer;\n    position: relative;\n    z-index: 0;\n\n    &:before {\n    content: \"\";\n    position: absolute;\n    z-index: -1;\n    inset: 0;\n    padding: 2px;\n    border-radius: 8px;\n\n    background: ").concat(_index.colors.gradientMain, ";\n\n    -webkit-mask: ").concat(_index.colors.gradientTransparentMask, " content-box,\n        ").concat(_index.colors.gradientTransparentMask, ";\n    mask: ").concat(_index.colors.gradientTransparentMask, " content-box, ").concat(_index.colors.gradientTransparentMask, ";\n    -webkit-mask-composite: xor;\n    mask-composite: exclude;\n    }\n    \n    &:hover {\n    background: ").concat(_index.colors.gradientMainLight, ";\n\n    color: ").concat(_index.colors.teal600, ";\n    outline: none;\n\n    &:before {\n        background: none;\n    }\n}\n");
+exports.OutlineCSS = OutlineCSS;
+const DestructiveCSS = "\n    font-family: 'HK Grotesk', sans-serif;\n    font-weight: 700;\n    background-color: ".concat(_index.colors.red500, ";\n    color: ").concat(_index.colors.white, ";\n    display: inline-block;\n    border-radius: 8px;\n    text-align: center;\n\n    transition: 0.3s;\n    cursor: pointer;\n\n&:hover {\n    background-color: ").concat(_index.colors.red600, ";\n    color: ").concat(_index.colors.white, ";\n}\n\n&:disabled {\n    background: ").concat(_index.colors.grey500, ";\n    color: ").concat(_index.colors.grey600, ";\n}\n");
+exports.DestructiveCSS = DestructiveCSS;
+const ButtonCSS = "\n    display: table;\n    user-select: none;\n    border-radius: 8px;\n\n    font-family: \"\", sans-serif;\n    font-weight: bold;\n\n    transition: all 0.13s linear; \n    position: relative;\n    overflow: hidden;\n    cursor: pointer;\n";
+exports.ButtonCSS = ButtonCSS;

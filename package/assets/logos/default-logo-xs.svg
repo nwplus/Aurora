@@ -1,0 +1,35 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="100" height="100" fill="#2C2543"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M59 33.7168L68.6272 33.7168V36.4641L59 36.4641V33.7168Z" fill="url(#paint0_linear_1119_1932)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M65.2998 28.8008V38.778L62.2913 41.6699L62.2913 31.8373L65.2998 28.8008Z" fill="url(#paint1_linear_1119_1932)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M60.7783 45.864L66.8144 40.0801V64.4748L60.7783 61.4382L60.7783 45.864Z" fill="url(#paint2_linear_1119_1932)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M31.8965 36.8982V28.8008L66.7952 62.3473V70.4448L31.8965 36.8982Z" fill="url(#paint3_linear_1119_1932)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M31.8965 28.8008L37.9135 34.5847L37.9135 64.6609L31.8965 70.4448L31.8965 28.8008Z" fill="url(#paint4_linear_1119_1932)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M31.8963 70.4436L46.638 56.5623L42.4261 52.5136L31.99 61.9963L31.8963 70.4436Z" fill="url(#paint5_linear_1119_1932)"/>
+<defs>
+<linearGradient id="paint0_linear_1119_1932" x1="59.7134" y1="35.2527" x2="69.1318" y2="35.2527" gradientUnits="userSpaceOnUse">
+<stop stop-color="#20FFAF"/>
+<stop offset="1" stop-color="#01DACC"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1119_1932" x1="65.1472" y1="30.5113" x2="62.2797" y2="30.5113" gradientUnits="userSpaceOnUse">
+<stop stop-color="#20FFAF"/>
+<stop offset="1" stop-color="#01DACC"/>
+</linearGradient>
+<linearGradient id="paint2_linear_1119_1932" x1="61.5806" y1="41.3172" x2="61.5806" y2="64.5687" gradientUnits="userSpaceOnUse">
+<stop stop-color="#20FFAF"/>
+<stop offset="1" stop-color="#01DACC"/>
+</linearGradient>
+<linearGradient id="paint3_linear_1119_1932" x1="36.5351" y1="30.9126" x2="36.5351" y2="70.6051" gradientUnits="userSpaceOnUse">
+<stop stop-color="#20FFAF"/>
+<stop offset="1" stop-color="#01DACC"/>
+</linearGradient>
+<linearGradient id="paint4_linear_1119_1932" x1="32.6962" y1="30.9126" x2="32.6962" y2="70.6051" gradientUnits="userSpaceOnUse">
+<stop stop-color="#20FFAF"/>
+<stop offset="1" stop-color="#01DACC"/>
+</linearGradient>
+<linearGradient id="paint5_linear_1119_1932" x1="34.3158" y1="53.0951" x2="33.5592" y2="70.5863" gradientUnits="userSpaceOnUse">
+<stop stop-color="#20FFAF"/>
+<stop offset="1" stop-color="#01DACC"/>
+</linearGradient>
+</defs>
+</svg>
