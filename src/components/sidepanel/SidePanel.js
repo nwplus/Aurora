@@ -1,10 +1,11 @@
-import { SidePanelCSS } from './SidePanelCSS';
-import { colors } from '../colors/Colors';
-import styled from 'styled-components';
+import React from "react";
+import { SidePanelCSS } from "./SidePanelCSS";
+import { colors } from "../colors/Colors";
+import styled from "styled-components";
 
 const SidePanel = ({ active, label, onClick }) => {
   const inactive = `color: ${colors.grey500}; pointer-events: none`;
-  let styles = '';
+  let styles = "";
 
   if (active) {
     styles += `${SidePanelCSS}`;

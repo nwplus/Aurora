@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 import {
   CalendarActiveCSS,
   CalendarInactiveCSS,
   CalendarTitleCSS,
   CalendarTagCSS,
-} from './CalendarCSS';
+} from "./CalendarCSS";
 
-import CalendarTagImage from '../../../assets/tag_filled.svg';
+import CalendarTagImage from "../../../assets/tag_filled.svg";
 
 const CalendarTitle = styled.p`
   ${CalendarTitleCSS}
@@ -19,7 +19,7 @@ const CalendarComponent = ({ description, active, title, date }) => {
   const checkDescription = () => {
     let modified_calendar_description = description;
     if (description.length > 64) {
-      modified_calendar_description = description.substring(0, 64) + ' ...';
+      modified_calendar_description = description.substring(0, 64) + " ...";
     }
 
     return modified_calendar_description;
@@ -43,7 +43,7 @@ const CalendarComponent = ({ description, active, title, date }) => {
 
   // Tag image should not be visible for inactive calendars
   const TagVisibility = () => {
-    let tagstyles = '';
+    let tagstyles = "";
     // false
     if (!active) {
       // Active calendar
@@ -62,7 +62,7 @@ const CalendarComponent = ({ description, active, title, date }) => {
       <CalendarTitle>
         {title}
         <CalendarTag>
-          <img src={CalendarTagImage} />
+          <img src={CalendarTagImage} alt="tag" />
         </CalendarTag>
       </CalendarTitle>
       <p>{date}</p>

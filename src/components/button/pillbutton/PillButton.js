@@ -1,18 +1,19 @@
-import styled from 'styled-components';
-import { colors } from '../../colors/index';
+import React from "react";
+import styled from "styled-components";
+import { colors } from "../../colors/index";
 import {
   PillButtonCSS,
   PillPrimaryCSS,
   PillSecondaryCSS,
-} from './PillButtonCSS';
+} from "./PillButtonCSS";
 
 const PillButton = ({ active, variant, label, onClick }) => {
   const getVariantStyles = (p) => {
     const inactiveSolid = `background: ${colors.grey500}; color: ${colors.grey600}; cursor: default; border-radius: 100px;`;
-    let styles = '';
+    let styles = "";
 
     switch (p.variant) {
-      case 'primary':
+      case "primary":
         styles += p.active
           ? `${PillPrimaryCSS}
                &::before {
@@ -21,7 +22,7 @@ const PillButton = ({ active, variant, label, onClick }) => {
           : inactiveSolid;
         break;
 
-      case 'secondary':
+      case "secondary":
         styles += p.active ? `${PillSecondaryCSS}` : inactiveSolid;
         break;
 

@@ -1,6 +1,7 @@
-import styled from 'styled-components';
-import { colors } from '../../colors/Colors';
-import Button from './ImageCardButton';
+import React from "react";
+import styled from "styled-components";
+import { colors } from "../../colors/Colors";
+import Button from "./ImageCardButton";
 
 const BackgroundImageContainer = styled.div`
   width: 100%;
@@ -53,7 +54,7 @@ const EventDataContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 1.2em;
-  font-family: 'HK Grotesk', sans-serif;
+  font-family: "HK Grotesk", sans-serif;
   font-weight: 700;
 `;
 
@@ -87,15 +88,15 @@ const ImageCardComponent = ({ active, link, date, imageLink }) => {
         <OverLayFooterContainer>
           <EventDataContainer>
             <EventRegistrationStatus active={active}>
-              {`Registration ${active ? 'Open' : 'Closed'}`}
+              {`Registration ${active ? "Open" : "Closed"}`}
             </EventRegistrationStatus>
             <EventDateString>{date}</EventDateString>
           </EventDataContainer>
           <Button
-            height='3em'
+            height="3em"
             link={link}
-            target='_blank'
-            rel='noopener noreferrer'
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Visit Site
           </Button>
@@ -106,4 +107,4 @@ const ImageCardComponent = ({ active, link, date, imageLink }) => {
   );
 };
 
-export default ImageCardComponent;
+export { ImageCardComponent };

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { errorMessageCSS, InputShortComponentCSS } from './InputShortCSS';
-import { colors } from '../../colors';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { errorMessageCSS, InputShortComponentCSS } from "./InputShortCSS";
+import { colors } from "../../colors";
 const getDisabledOrErrorStyles = (p) => {
   if (p.disabled) {
     return `border-color: ${colors.grey500}; color:${colors.grey500}; &:hover {
@@ -29,8 +29,8 @@ const ErrorMessage = styled.div`
 `;
 
 const InputShort = ({ disabled, isEmptyError, placeholder, onChange }) => {
-  const [text, setText] = useState('');
-  const [errorText, setErrorText] = useState('');
+  const [text, setText] = useState("");
+  const [errorText, setErrorText] = useState("");
   const textOverMaxCharacterLimit = text.length > 50;
   const showEmptyErrorStyles = isEmptyError && text.length === 0;
   const showErrorMessage =
@@ -43,16 +43,16 @@ const InputShort = ({ disabled, isEmptyError, placeholder, onChange }) => {
 
   useEffect(() => {
     if (showEmptyErrorStyles) {
-      setErrorText('Please enter an input');
+      setErrorText("Please enter an input");
     } else if (textOverMaxCharacterLimit) {
       setErrorText("Looks like you're above 50 characters! Try again.");
     }
-  }, [text, showEmptyErrorStyles]);
+  }, [text, showEmptyErrorStyles, textOverMaxCharacterLimit]);
 
   return (
     <div>
       <InputShortComponent
-        id='input-short-component'
+        id="input-short-component"
         disabled={disabled}
         error={showEmptyErrorStyles || textOverMaxCharacterLimit}
         placeholder={placeholder}

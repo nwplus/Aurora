@@ -1,24 +1,26 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 import {
   InputMobileCSS,
   InputMobileLightCSS,
   InputMobileDarkCSS,
   InputMobileTransparentCSS,
-} from './InputMobileCSS';
+} from "./InputMobileCSS";
 
 const getVariantStyles = (p) => {
-  let styles = '';
+  let styles = "";
   switch (p.variant) {
-    case 'light':
+    case "light":
       styles += `${InputMobileLightCSS}`;
       break;
-    case 'dark':
+    case "dark":
       styles += `${InputMobileDarkCSS}`;
       break;
-    case 'transparent':
+    case "transparent":
       styles += `${InputMobileTransparentCSS}`;
       break;
+    default:
+      styles += `${InputMobileLightCSS}`;
   }
   return styles;
 };
@@ -30,7 +32,7 @@ const Input = styled.input`
 `;
 
 const InputMobile = ({ width, variant, placeholder, onChange }) => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
 
   const changeHandler = (e) => {
     setText(e.target.value);
@@ -39,7 +41,7 @@ const InputMobile = ({ width, variant, placeholder, onChange }) => {
 
   return (
     <Input
-      id='input-mobile-component'
+      id="input-mobile-component"
       placeholder={placeholder}
       value={text}
       width={width}

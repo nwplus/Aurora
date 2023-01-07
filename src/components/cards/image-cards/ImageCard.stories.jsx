@@ -1,6 +1,6 @@
 import React from "react";
 import HackCampSrc from "./HackCamp2022.png";
-import ImageCardComponent from "./ImageCard";
+import { ImageCardComponent } from "./ImageCard";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
