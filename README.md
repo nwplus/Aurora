@@ -22,6 +22,8 @@ To build your package run:
 
 `npm run build`
 
+Copy files in dist to package
+
 To publish to npm (login required)
 
 `npm run publish`
