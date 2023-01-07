@@ -24,4 +24,4 @@ To build your package run:
 
 To publish to npm (login required)
 
-`npm publish`
+`npm publish --access public`
