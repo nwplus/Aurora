@@ -1,3 +1,9 @@
+# Aurora Design System
+
+Aurora is a comprehensive React component library to help build nwPlus websites faster. Common components such as icons, typography, buttons, controls, inputs, and dropdowns have been built with reusability and atomic design in mind so that developers can use them right out of the box. It is built with React Styled Components and Storybook.
+
+Aurora is available as an [npm package](https://www.npmjs.com/package/@nwplusdev/aurora?activeTab=readme).
+
 ## Development
 
 ### Running the repo for the first time
