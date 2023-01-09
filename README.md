@@ -22,7 +22,7 @@ To build your package run:
 
 `npm run build`
 
-Copy files in dist to package
+Copy files in dist to package. Make sure to update the version in package.json or it won't publish.
 
 To publish to npm (login required)
 
