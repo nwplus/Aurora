@@ -1,8 +1,9 @@
 {
     "name": "@nwplusdev/aurora",
     "description": "Bringing beautiful UI components ready for production",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "private": false,
+    "keywords": ["react", "react-components", "library", "design-system"],
     "files": [
       "./assets",
       "./components",
