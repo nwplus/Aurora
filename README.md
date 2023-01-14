@@ -28,8 +28,12 @@ To build your package run:
 
 `npm run build`
 
-Copy files in dist to package. Make sure to update the version in package.json or it won't publish.
+Copy files in dist to package.
+
+`npm run copy`
 
 To publish to npm (login required)
+
+Make sure to update the version in package.json or it won't publish.
 
 `npm run publish`
